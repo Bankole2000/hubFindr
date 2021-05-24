@@ -11,7 +11,7 @@ searchButton.addEventListener("click", e => {
   if(username){
     transitionElement.classList.add('is-active');
     console.log(window.location);
-    window.location = `/profile.html?username=${username}`;
+    window.location = `profile.html?username=${username}`;
   }
 })
 
@@ -22,5 +22,5 @@ mobileSearchButton.addEventListener("click", e => {
   
     transitionElement.classList.add('is-active');
     console.log(window.location);
-    window.location = `/profile.html?username=${username}`;
+    window.location = `profile.html?username=${username}`;
 })

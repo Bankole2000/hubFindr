@@ -32,7 +32,7 @@ navSearchInput.addEventListener('keyup', e => {
     console.log(navSearchInput.value);
     transitionElement.classList.add('is-active');
     console.log(window.location);
-    window.location = `/profile.html?username=${navSearchInput.value || "null"}`;
+    window.location = `profile.html?username=${navSearchInput.value || "null"}`;
   }
 })
 
@@ -45,7 +45,7 @@ document.addEventListener('keyup', e => {
   }
 })
 
-if(window.location.pathname == `/profile.html`){
+if(window.location.pathname == `/profile.html` || window.location.pathname == `/hubFindr/profile.html`){
 
 
 
@@ -61,7 +61,7 @@ if(window.location.pathname == `/profile.html`){
     if(!user){
       // Render Error Page
       console.log({user});
-      window.location = `/404.html`;
+      window.location = `404.html`;
       return;
     }
     console.log({user});
