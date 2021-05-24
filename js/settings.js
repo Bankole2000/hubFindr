@@ -1,8 +1,11 @@
 export const config = {
   darkMode: false, 
   apiURL: `https://api.github.com/graphql`, 
-  token: `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`, 
+  authURL: `https://cribba-api.herokuapp.com/`, 
   appSettings: {
-    amount: 20
+    amount: 20, 
+    field: 'UPDATED_AT', 
+    direction: 'DESC',
+    topics: 5
   }
 }

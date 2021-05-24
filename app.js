@@ -1,6 +1,7 @@
 const transitionElement = document.querySelector("#transition");
 
 import { createQueryString, fieldsEnum, directionEnum } from "./js/gql.js";
+import { config } from './js/settings.js';
 import {timeAgo} from './js/utils.js';
 
 const searchParams = new URLSearchParams(window.location.search)
@@ -20,12 +21,6 @@ document.addEventListener('DOMContentLoaded', (e) => {
 })
 
 
-
-
-// const url = `https://docs.github.com/en/graphql/overview/explorer`
-const otherUrl = `https://api.github.com/graphql`;
-const token = `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`;
-
 const navSearchInput = document.querySelector('#nav-search-input');
 navSearchInput.addEventListener('keyup', e => {
   if(e.key == "Enter"){
@@ -37,7 +32,6 @@ navSearchInput.addEventListener('keyup', e => {
 })
 
 document.addEventListener('keyup', e => {
-  
   if(e.key == "/" && !e.ctrlKey && !e.altKey && !(document.activeElement === navSearchInput)){
     navSearchInput.focus();
     // navSearchInput.parentElement.style.width="350px"
@@ -47,9 +41,18 @@ document.addEventListener('keyup', e => {
 
 if(window.location.pathname == `/profile.html` || window.location.pathname == `/hubFindr/profile.html`){
 
+  let token = localStorage.getItem('hubFindrToken')
+  if(!token){
+    fetch(config.authURL)
+      .then(res => res.json())
+      .then(data => {
+        const {hubFindrToken} = data;
+        localStorage.setItem('hubFindrToken', hubFindrToken)
+        token = hubFindrToken
+      })
+  }
 
-
-  fetch(otherUrl, {
+  fetch(config.apiURL, {
     method: 'POST',
     headers: { 'Content-Type': 'application/json', "Authorization" : `bearer ${token}` },
     body: query,

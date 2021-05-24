@@ -62,13 +62,13 @@ class UI {
           <svg class="profile-icon" viewBox="0 0 16 16" height="16" width="16">
             <use xlink:href="#followers-icon" />
           </svg>
-          <span style="font-weight: 500;">${user.followers.totalCount > 1000 ? (user.followers.totalCount/1000).toFixed(1) : user.followers.totalCount}&nbsp;</span> 
+          <span style="font-weight: 500;">${user.followers.totalCount > 1000 ? (user.followers.totalCount/1000).toFixed(1) + 'k' : user.followers.totalCount}&nbsp;</span> 
           followers &nbsp; 
         </a> &middot; &nbsp;
       </span>
       <span style="display: flex; align-items: center;">
         <a class="following" href="https://github.com/${user.login}?tab=following" target="_blank">
-          <span style="font-weight: 500;">${user.following.totalCount > 1000 ? (user.following.totalCount/1000).toFixed(1) : user.following.totalCount}</span> 
+          <span style="font-weight: 500;">${user.following.totalCount > 1000 ? (user.following.totalCount/1000).toFixed(1)+'k' : user.following.totalCount}</span> 
           following &nbsp;
         </a>&middot;
       </span>
@@ -104,13 +104,13 @@ class UI {
           <svg class="profile-icon" viewBox="0 0 16 16" height="16" width="16">
             <use xlink:href="#followers-icon" />
           </svg>
-          <span style="font-weight: 500;">${user.followers.totalCount > 1000 ? (user.followers.totalCount/1000).toFixed(1) : user.followers.totalCount}&nbsp;</span> 
+          <span style="font-weight: 500;">${user.followers.totalCount > 1000 ? (user.followers.totalCount/1000).toFixed(1) + 'k' : user.followers.totalCount}&nbsp;</span> 
           followers &nbsp; 
         </a> &middot; &nbsp;
       </span>
       <span style="display: flex; align-items: center;">
         <a class="following" href="https://github.com/${user.login}?tab=following" target="_blank">
-          <span style="font-weight: 500;">${user.following.totalCount > 1000 ? (user.following.totalCount/1000).toFixed(1) : user.following.totalCount}</span> 
+          <span style="font-weight: 500;">${user.following.totalCount > 1000 ? (user.following.totalCount/1000).toFixed(1) + 'k' : user.following.totalCount}</span> 
           following &nbsp;
         </a>&middot;
       </span>
