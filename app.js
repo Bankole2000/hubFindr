@@ -24,7 +24,7 @@ document.addEventListener('DOMContentLoaded', (e) => {
 
 // const url = `https://docs.github.com/en/graphql/overview/explorer`
 const otherUrl = `https://api.github.com/graphql`;
-const token = `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`;
+const token = `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`;
 
 const navSearchInput = document.querySelector('#nav-search-input');
 navSearchInput.addEventListener('keyup', e => {
