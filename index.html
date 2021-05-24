@@ -1,0 +1,119 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" href="spinner.css">
+  <link rel="stylesheet" href="globalStyles.css">
+  <title>HubFindr | Home</title>
+</head>
+<body>
+  <header>
+    <div class="nav">
+      <a href="" style="align-self: center;">
+        <svg class="menu-icon md-down">
+          <use xlink:href="#nav-menu-icon" />
+        </svg>
+      </a>
+      <a href="/">
+        <svg class="logo">
+          <use xlink:href="#github-logo" />
+        </svg>
+      </a>
+      
+      <h2 class="logo-text" >HubFindr</h2>
+      <a class="md-down" href="https://twitter.com/codingInNeon" target="_blank">
+        <svg width="32" height="32">
+          <use xlink:href="#twitter-icon" />
+        </svg>
+      </a>
+      <div class="search-input-container lg-only">
+        <input class="input" id="nav-search-input" type="text" placeholder="Search or jump to...">
+      </div>
+      <ul class="lg-only">
+        <li><a href="https://github.com/pulls" target="_blank">Pull Requests</a></li>
+        <li><a href="https://github.com/issues" target="_blank">Issues</a></li>
+        <li><a href="https://github.com/marketplace" target="_blank">Market Place</a></li>
+        <li><a href="https://github.com/explore" target="_blank">Explore</a></li>
+      </ul>
+      <div class="spacer lg-only"></div>
+      <ul class="lg-only">
+        <li>
+          <a href="profile.html">Sample</a>
+        </li>
+        <li>
+          <a href="profile.html">Settings</a>
+        </li>
+      </ul>
+    </div>
+  </header>
+  <main class="home-page">
+    <section class="search">
+      <h1 class="display-1">HubFindr</h1>
+      <p class="display-1">Find Github Users</p>
+      <form class="input-container">
+        <input type="text" autocomplete="off" class="home-search" id="home-search-input" name="username" placeholder="Github username">
+        <button class="home-search" id="home-search">
+          <svg width="24" height="24">
+            <use xlink:href="#search-icon"></use>
+          </svg>
+          Search</button>
+      </form>
+      <input class="sm-only" type="text" placeholder="Github username..." autocomplete="off" id="mobile-search-input">
+      <button class="sm-only" id="mobile-search-button"><svg width="24" height="24">
+        <use xlink:href="#search-icon"></use>
+      </svg>Search</button>
+    </section>
+  </main>
+  <!-- Transition Element + Loader -->
+  <div id="transition" class="is-active">
+    <div class="lds-spinner"><div></div><div></div><div></div><div></div><div></div><div></div><div></div><div></div><div></div><div></div><div></div><div></div></div>
+  </div>
+
+  <!-- SVG Icons -->
+  <!-- Github Logo -->
+  <svg display="none">
+    <symbol id="github-logo" height="32" viewBox="0 0 16 16"  width="32">
+      <path d="M8 0C3.58 0 0 3.58 0 8c0 3.54 2.29 6.53 5.47 7.59.4.07.55-.17.55-.38 0-.19-.01-.82-.01-1.49-2.01.37-2.53-.49-2.69-.94-.09-.23-.48-.94-.82-1.13-.28-.15-.68-.52-.01-.53.63-.01 1.08.58 1.23.82.72 1.21 1.87.87 2.33.66.07-.52.28-.87.51-1.07-1.78-.2-3.64-.89-3.64-3.95 0-.87.31-1.59.82-2.15-.08-.2-.36-1.02.08-2.12 0 0 .67-.21 2.2.82.64-.18 1.32-.27 2-.27.68 0 1.36.09 2 .27 1.53-1.04 2.2-.82 2.2-.82.44 1.1.16 1.92.08 2.12.51.56.82 1.27.82 2.15 0 3.07-1.87 3.75-3.65 3.95.29.25.54.73.54 1.48 0 1.07-.01 1.93-.01 2.2 0 .21.15.46.55.38A8.013 8.013 0 0016 8c0-4.42-3.58-8-8-8z"></path>
+    </symbol>
+  </svg>
+
+  <!-- Repositories Icon -->
+  <svg display="none">
+    <svg id="repositories-icon" viewBox="0 0 16 16" height="16" width="16">
+      <path fill-rule="evenodd" d="M2 2.5A2.5 2.5 0 014.5 0h8.75a.75.75 0 01.75.75v12.5a.75.75 0 01-.75.75h-2.5a.75.75 0 110-1.5h1.75v-2h-8a1 1 0 00-.714 1.7.75.75 0 01-1.072 1.05A2.495 2.495 0 012 11.5v-9zm10.5-1V9h-8c-.356 0-.694.074-1 .208V2.5a1 1 0 011-1h8zM5 12.25v3.25a.25.25 0 00.4.2l1.45-1.087a.25.25 0 01.3 0L8.6 15.7a.25.25 0 00.4-.2v-3.25a.25.25 0 00-.25-.25h-3.5a.25.25 0 00-.25.25z"></path>
+    </svg>
+  </svg>
+
+
+  <!-- Star Empty Icon -->
+  <svg display="none">
+    <symbol id="star-empty-icon" viewBox="0 0 16 16" width="16" height="16">
+      <path fill-rule="evenodd" d="M8 .25a.75.75 0 01.673.418l1.882 3.815 4.21.612a.75.75 0 01.416 1.279l-3.046 2.97.719 4.192a.75.75 0 01-1.088.791L8 12.347l-3.766 1.98a.75.75 0 01-1.088-.79l.72-4.194L.818 6.374a.75.75 0 01.416-1.28l4.21-.611L7.327.668A.75.75 0 018 .25zm0 2.445L6.615 5.5a.75.75 0 01-.564.41l-3.097.45 2.24 2.184a.75.75 0 01.216.664l-.528 3.084 2.769-1.456a.75.75 0 01.698 0l2.77 1.456-.53-3.084a.75.75 0 01.216-.664l2.24-2.183-3.096-.45a.75.75 0 01-.564-.41L8 2.694v.001z"></path>
+    </symbol>
+  </svg>
+
+
+
+  <!-- Menu Icon -->
+  <svg display="none">
+    <symbol id="nav-menu-icon" height="24" viewBox="0 0 16 16" width="24">
+      <path fill-rule="evenodd" d="M1 2.75A.75.75 0 011.75 2h12.5a.75.75 0 110 1.5H1.75A.75.75 0 011 2.75zm0 5A.75.75 0 011.75 7h12.5a.75.75 0 110 1.5H1.75A.75.75 0 011 7.75zM1.75 12a.75.75 0 100 1.5h12.5a.75.75 0 100-1.5H1.75z"></path>
+    </symbol>
+  </svg>
+  <!-- Search Icon -->
+  <svg display="none">
+    <symbol id="search-icon" viewBox="0 0 24 24" width="24px" height="24px"><path d="M 13.261719 14.867188 L 15.742188 17.347656 C 15.363281 18.070313 15.324219 18.789063 15.722656 19.1875 L 20.25 23.714844 C 20.820313 24.285156 22.0625 23.972656 23.015625 23.015625 C 23.972656 22.058594 24.285156 20.820313 23.714844 20.25 L 19.191406 15.722656 C 18.789063 15.324219 18.070313 15.363281 17.347656 15.738281 L 14.867188 13.261719 Z M 8.5 0 C 3.804688 0 0 3.804688 0 8.5 C 0 13.195313 3.804688 17 8.5 17 C 13.195313 17 17 13.195313 17 8.5 C 17 3.804688 13.195313 0 8.5 0 Z M 8.5 15 C 4.910156 15 2 12.089844 2 8.5 C 2 4.910156 4.910156 2 8.5 2 C 12.089844 2 15 4.910156 15 8.5 C 15 12.089844 12.089844 15 8.5 15 Z"/></symbol>
+  </svg>
+
+  <!-- Twitter Icon -->
+  <svg display="none">
+    <symbol id="twitter-icon" viewBox="0 0 273.5 222.3">
+      <path d="M273.5 26.3a109.77 109.77 0 0 1-32.2 8.8 56.07 56.07 0 0 0 24.7-31 113.39 113.39 0 0 1-35.7 13.6 56.1 56.1 0 0 0-97 38.4 54 54 0 0 0 1.5 12.8A159.68 159.68 0 0 1 19.1 10.3a56.12 56.12 0 0 0 17.4 74.9 56.06 56.06 0 0 1-25.4-7v.7a56.11 56.11 0 0 0 45 55 55.65 55.65 0 0 1-14.8 2 62.39 62.39 0 0 1-10.6-1 56.24 56.24 0 0 0 52.4 39 112.87 112.87 0 0 1-69.7 24 119 119 0 0 1-13.4-.8 158.83 158.83 0 0 0 86 25.2c103.2 0 159.6-85.5 159.6-159.6 0-2.4-.1-4.9-.2-7.3a114.25 114.25 0 0 0 28.1-29.1" fill="currentColor"></path>
+    </symbol>
+  </svg>
+  <script src="home.js"></script>
+  <script type="module" src="app.js"></script>
+</body>
+</html>

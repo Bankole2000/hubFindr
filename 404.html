@@ -1,0 +1,113 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" href="spinner.css">
+  <link rel="stylesheet" href="globalStyles.css">
+
+  <title>User Not Found</title>
+</head>
+<body>
+  <header>
+    <div class="nav">
+      <a href="/">
+        <svg class="logo">
+          <use xlink:href="#github-logo" />
+        </svg>
+      </a>
+      <div class="search-input-container">
+        <input class="input" id="nav-search-input" type="text" placeholder="Search or jump to...">
+      </div>
+      <ul>
+        <li><a href="https://github.com/pulls" target="_blank">Pull Requests</a></li>
+        <li><a href="https://github.com/issues" target="_blank">Issues</a></li>
+        <li><a href="https://github.com/marketplace" target="_blank">Market Place</a></li>
+        <li><a href="https://github.com/explore" target="_blank">Explore</a></li>
+      </ul>
+      <div class="spacer"></div>
+      <ul>
+        <li>
+          <a href="profile.html">Sample</a>
+        </li>
+        <li>
+          <a href="profile.html">Settings</a>
+        </li>
+      </ul>     
+      
+    </div>
+  </header>
+  <main >
+    <section class="hero-404">
+      <div style="margin: 0 50px; display: flex; flex-direction: column; justify-content: center;">
+        <h1 class="display-1" style="text-align: center; color: white; text-shadow: 1px 1px 3px rgba(0, 0, 0, 0.5);">404</h1>
+        <div style="padding: 15px; background-color: white; max-width: 250px; border-radius: 20px; position: relative; box-shadow: 1px 1px 3px rgba(0, 0, 0, 0.5);">
+          <p class="display-2" style="text-align: center;">We couldn't find anyone with that username</p>
+          <div class="arrow-right-404"></div>
+        </div>
+      </div>
+      <div style="width: 230px; height: 230px;">
+        <img src="images/octocat-2.png" height="100%">
+      </div>
+    </section>
+    <section class="search-404">
+
+      <form class="input-container">
+        <input type="text" class="home-search" id="home-search-input" name="username" placeholder="Github username">
+        <button class="home-search" id="home-search">Search</button>
+      </form>
+    </section>
+  </main>
+  <footer style="margin-top: 10px; ">
+    <div class="container content"  >
+      <div style="width: 100%; margin: 30px 0 20px; padding: 50px 0 8px; display: flex; align-items: center; justify-content: center; border-top: 1px solid var(--border-grey); font-size: 0.8rem; flex-wrap: wrap;">
+        <div style="flex: 4; display: flex; align-items: center; justify-content: space-between; flex-wrap: wrap;">
+          <span id="copyright">
+            
+          </span>
+          <script type="text/javascript">
+            document.getElementById('copyright').innerHTML = `
+            &copy; ${new Date().getFullYear()} Github, Inc.
+            `
+          </script>
+          <a href="https://docs.github.com/en/github/site-policy/github-terms-of-service" target="_blank">Terms</a>
+          <a href="https://docs.github.com/en/github/site-policy/github-privacy-statement" target="_blank">Privacy</a>
+          <a href="https://github.com/security" target="_blank">Security</a>
+          <a href="https://www.githubstatus.com/" target="_blank">Status</a>
+          <a href="https://docs.github.com/" target="_blank">Docs</a>
+        </div>
+        <div style="flex: 1; display: flex; align-items: center; justify-content: center; " class="lg-only">
+          <a href="/">
+            <svg width="32" height="32" style="fill: var(--text-grey); margin: 0 16px">
+              <use xlink:href="#github-logo" />
+            </svg>
+          </a>
+        </div>
+        <div style="flex: 4; display: flex; align-items: center; justify-content: space-between; flex-wrap: wrap;">
+          <a href="https://support.github.com/" target="_blank">Contact Github</a>
+          <a href="https://github.com/pricing" target="_blank">Pricing</a>
+          <a href="https://docs.github.com/" target="_blank">API</a>
+          <a href="https://services.github.com/" target="_blank">Training</a>
+          <a href="https://github.blog/" target="_blank">Blog</a>
+          <a href="https://github.com/about" target="_blank">About</a>
+        </div>
+      </div>
+      
+    </div>
+  </footer>
+    <!-- Transition Element + Loader -->
+    <div id="transition" >
+      <div class="lds-spinner"><div></div><div></div><div></div><div></div><div></div><div></div><div></div><div></div><div></div><div></div><div></div><div></div></div>
+    </div>
+
+  <!-- SVG Icons -->
+  <!-- Github Logo -->
+  <svg display="none">
+    <symbol id="github-logo" height="32" viewBox="0 0 16 16"  width="32">
+      <path d="M8 0C3.58 0 0 3.58 0 8c0 3.54 2.29 6.53 5.47 7.59.4.07.55-.17.55-.38 0-.19-.01-.82-.01-1.49-2.01.37-2.53-.49-2.69-.94-.09-.23-.48-.94-.82-1.13-.28-.15-.68-.52-.01-.53.63-.01 1.08.58 1.23.82.72 1.21 1.87.87 2.33.66.07-.52.28-.87.51-1.07-1.78-.2-3.64-.89-3.64-3.95 0-.87.31-1.59.82-2.15-.08-.2-.36-1.02.08-2.12 0 0 .67-.21 2.2.82.64-.18 1.32-.27 2-.27.68 0 1.36.09 2 .27 1.53-1.04 2.2-.82 2.2-.82.44 1.1.16 1.92.08 2.12.51.56.82 1.27.82 2.15 0 3.07-1.87 3.75-3.65 3.95.29.25.54.73.54 1.48 0 1.07-.01 1.93-.01 2.2 0 .21.15.46.55.38A8.013 8.013 0 0016 8c0-4.42-3.58-8-8-8z"></path>
+    </symbol>
+  </svg>
+  <script type="module" src="app.js"></script>
+</body>
+</html>
