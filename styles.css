@@ -982,6 +982,13 @@ section.search-404 div p a:hover {
 
 
 @media screen and (max-width: 762px) {
+  svg.logo {
+    margin-right: 0px;
+  }
+
+  .notification-container {
+    margin-right: 0px;
+  }
   section.hero-404 {
     display: none;
   }
