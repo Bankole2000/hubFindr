@@ -123,11 +123,15 @@ Notable (but deliberate) ommissions with reasons:
 * **Fonts**: The Gihub website uses the Segoe UI font. This is not the font I used, due to my general preference for google fonts, and is probably the most significant difference between the **HubFindr** profile page and the actual github website. 
 * **Dark Mode**: I could have implemented this fairly easily (and I imagine some other challenge entries probably would/did), but I decided against it so as not to come off as being overly extravagant/pedantic.
 
+## Known Bugs / Issues
+1. Firefox captures `/` keypress by default (for quick search). This negatively affects overall UX imho.
+2. When searching for repos in order of `pushed at`, dependabot pushes on forks tend to skew results. Query and data are accurate, just unexpected.
+
 ## Some Notes
 - **Early Submission** : I could have submitted this much earlier (completed the basic requirements roughly 3 days after I became aware of the challenge, *24th May*, became aware on the *21st*), but I thought to leverage the extra time to implement the extra features and take notes.
 - **Missing profile data**: I tried adding the `Achievements` section to the user profiles, but couldn't (for the life of me) find the field with the relevant data on the api. This step also prevented me from adding the rest of the profile data (organizations etc), as well as the `Block or Report` link so as not to distort the 1:1 replication.
 - **API Security**: To handle the `token` security issue, I used a personal 3rd party api (one of my own creation) so the **HubFindr** site could run on github pages. Ideally, this would be handled with *environmental variables*, an *OAuth server*, or some other kind of client authentication mechanism. I felt uneasy about this, but I believe doing so is/was well within the specified requirements.
-- Some Shortcomings: The CSS is a bit messy. Too many inline styles especially in template strings. Navbar input styling could be better (i.e. more similar to Github's). Navbar input animation is jittery sometimes.
+- Room for improvements: The CSS is a bit messy. Too many inline styles especially in template strings. Navbar input styling could be better (i.e. more similar to Github's). Navbar input animation is jittery sometimes.
 
 ## Contribution
 This is a solo project. And will be shared publicly **only** after the submission deadline (31st May 2021).
