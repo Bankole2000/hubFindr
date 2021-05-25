@@ -177,7 +177,7 @@ export default class UI {
     if(nodes.length){
       this.repoPill.innerHTML = nodes.length;
       this.repos.innerHTML += `<div class="main-item">
-        <p><strong>${nodes.length}</strong> results of <strong>public repositories</strong> sorted by <strong>${fieldsObject[field]}</strong></p>
+        <p><strong>${nodes.length}</strong> result${nodes.length > 1 ? 's' : ''} of <strong>public repositories</strong> sorted by <strong>${fieldsObject[field]}</strong></p>
     </div>`
     
     nodes.forEach(repo => {
