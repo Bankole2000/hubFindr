@@ -1,11 +1,10 @@
-class UI {
+export default class UI {
   constructor() {
     this.profile = document.querySelector('#profile');
     this.repos = document.querySelector('#repos');
     this.repoPill = document.querySelector('#repositories-count');
     this.topBarProfile = document.querySelector('.top-bar-profile');
     this.mobileProfile = document.querySelector('#mobile-profile');
-
   }
 
   async showProfile(user){
@@ -123,6 +122,7 @@ class UI {
         </a>
       </span>
     </div>
+    
     <p class="profile-contact-item" style="display: ${user.company ? 'block': 'none'}">
     <a>  
     <svg class="profile-icon" viewBox="0 0 16 16" height="16" width="16">
@@ -153,6 +153,7 @@ class UI {
         <use xlink:href="#twitter-icon" />
       </svg>
     ${user.twitterUsername}</a></p>
+    
   </div>
     `
    document.querySelector('#nav-avatar').setAttribute('src', user.avatarUrl)

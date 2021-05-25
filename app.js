@@ -1,9 +1,19 @@
+// Get Elements
 const transitionElement = document.querySelector("#transition");
+const navSearchInput = document.querySelector('#nav-search-input');
 
-import { createQueryString, fieldsEnum, directionEnum } from "./js/gql.js";
+
+// Import / Declare Classes/Functions/Objects to be used
+import { createQueryString, fieldsEnum } from "./js/gql.js";
 import { config } from './js/settings.js';
 import {timeAgo} from './js/utils.js';
+import UI from "./js/UI.js";
 
+const toggleMenu = () => {
+  document.getElementById("myDropdown").classList.toggle("show");
+}
+
+// Get Query params from URL
 const searchParams = new URLSearchParams(window.location.search)
 const username = searchParams.get('username');
 const amount = searchParams.has('amount')? searchParams.get('amount') : 20;
@@ -11,36 +21,31 @@ const field = searchParams.has('field')? searchParams.get('field'): 'UPDATED_AT'
 const direction = searchParams.has('direction') ? searchParams.get('direction') : 'DESC';
 const noOfTopics = searchParams.has('topics') ? searchParams.get('topics'): 5;
 
+// Create GQL query
 const query = createQueryString(username, amount, field, direction, noOfTopics)
 
-document.addEventListener('DOMContentLoaded', (e) => {
-  console.log(window.location);
-  setTimeout(() => {
-    transitionElement.classList.remove('is-active')
-  }, 400);
-})
-
-
-const navSearchInput = document.querySelector('#nav-search-input');
+// EventListeners
+// Submit Nav Input on enter key
 navSearchInput.addEventListener('keyup', e => {
   if(e.key == "Enter"){
-    console.log(navSearchInput.value);
     transitionElement.classList.add('is-active');
-    console.log(window.location);
     window.location = `profile.html?username=${navSearchInput.value || "null"}`;
+  }
+  if(e.key == "Escape"){
+    e.target.blur()
   }
 })
 
+// Focus on nav input on / key
 document.addEventListener('keyup', e => {
   if(e.key == "/" && !e.ctrlKey && !e.altKey && !(document.activeElement === navSearchInput)){
     navSearchInput.focus();
-    // navSearchInput.parentElement.style.width="350px"
-    console.log({activeElement : document.activeElement, input: navSearchInput});
   }
 })
 
+// Make sure current page is profile page
 if(window.location.pathname == `/profile.html` || window.location.pathname == `/hubFindr/profile.html`){
-
+  // Fetch token if not in local storage
   let token = localStorage.getItem('hubFindrToken')
   if(!token){
     fetch(config.authURL)
@@ -51,7 +56,7 @@ if(window.location.pathname == `/profile.html` || window.location.pathname == `/
         token = hubFindrToken
       })
   }
-
+  // Query API
   fetch(config.apiURL, {
     method: 'POST',
     headers: { 'Content-Type': 'application/json', "Authorization" : `bearer ${token}` },
@@ -59,38 +64,42 @@ if(window.location.pathname == `/profile.html` || window.location.pathname == `/
   })
   .then(res => res.json())
   .then( (data) => {
-    console.log(data)
     const {data: {user}} = data;
     if(!user){
-      // Render Error Page
-      console.log({user});
+      // If no user redirect to 404 Page
       window.location = `404.html`;
       return;
     }
-    console.log({user});
+    // instantiate new UI object
     const ui = new UI();
-    ui.showProfile(user);
+    
+    // Output/Render user profile
+    ui.showProfile(user); 
+    
+    // Output/Render user repos
     ui.showRepos(user, field, timeAgo, fieldsEnum,).then(() => {
+      document.title = `${user.login}'s Profile | HubFindr`;
       setTimeout(() => {
+
+        // Remove transition element
         transitionElement.classList.remove('is-active')
-        const section = document.querySelector('.profile-username');
+
+        // Set Intersection observer (for sticky bar profile on scroll)
+        const targetSection = document.querySelector('.profile-username');
         const topBarProfile = document.querySelector('.top-bar-profile');
         const options = {
           rootMargin: "-80px"
         };
-        const observer = new IntersectionObserver(function(entries, observer){
-
+        const observer = new IntersectionObserver(function(entries){
           entries.forEach(entry => {
             if(!entry.isIntersecting){
               topBarProfile.classList.add('show');
-              console.log(topBarProfile.querySelector('#top-bar-profile-avatar'));
             } else {
               topBarProfile.classList.remove('show');
             }
-            console.log(entry);
           })
         }, options)
-        observer.observe(section);
+        observer.observe(targetSection);
       }, 400);
     })
   });

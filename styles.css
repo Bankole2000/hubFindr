@@ -173,6 +173,7 @@ button.home-search svg{
 button.home-search:focus{
   outline: none;
   border: 2px solid var(--theme-blue);
+  color: var(--theme-blue);
 }
 
 button.home-search:focus svg{
@@ -284,6 +285,7 @@ main .topbar {
 
 section.profile {
   flex: 3;
+  width: 30%;
   padding: 0 16px;
   margin-top: -30px;
   display: flex;
@@ -327,12 +329,15 @@ section.profile {
   justify-content: flex-start;
   margin: 8px 0;
   font-size: 15px;
+  overflow: hidden;
+  white-space: nowrap;
 }
 
 .profile-contact-item a {
   color: var(--theme-grey);
   display: flex;
   align-items: center;
+  text-overflow: ellipsis;
 }
 
 .profile-contact-item svg {
@@ -454,6 +459,10 @@ svg.nav-icon {
   fill: var(--text-white);
 }
 
+svg.nav-icon:hover {
+  fill: var(--text-grey);
+}
+
 svg.tab-icon {
   fill: var(--text-grey )
 }
@@ -476,6 +485,7 @@ svg.btn-icon-left{
 
 svg.profile-icon {
   margin: 0px 5px;
+  flex-shrink: 0;
 }
 
 a.following {
@@ -760,12 +770,86 @@ footer {
    justify-content: center; 
 }
 
+.mobile-hero-404 {
+  display: none;
+}
 
+/* Drop Down & Modal */
+.dropdown {
+  position: relative;
+  display: inline-block;
+}
 
+.dropdown-content {
+  display: none;
+  position: absolute;
+  left: 0;
+  top: 64px;
+  background-color: #f1f1f1;
+  width: 60%;
+  box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
+  border-radius: 10px;
+  z-index: 5;
+}
+
+.dropdown-content a {
+  
+  
+  text-decoration: none;
+  display: block;
+}
+
+.show {display:block;}
+/* Drop down styles */
+
+/* Modal Styles */
+/* The Modal (background) */
+.modal {
+  display: none; /* Hidden by default */
+  position: fixed; /* Stay in place */
+  z-index: 1; /* Sit on top */
+  left: 0;
+  top: 0;
+  width: 100%; /* Full width */
+  height: 100%; /* Full height */
+  overflow: auto; /* Enable scroll if needed */
+  background-color: rgb(0,0,0); /* Fallback color */
+  background-color: rgba(0,0,0,0.4); /* Black w/ opacity */
+}
+
+/* Modal Content/Box */
+.modal-content {
+  background-color: #fefefe;
+  margin: 15% auto; /* 15% from the top and centered */
+  padding: 20px;
+  border: 1px solid #888;
+  width: 80%; /* Could be more or less, depending on screen size */
+}
+
+/* The Close Button */
+.close {
+  color: #aaa;
+  float: right;
+  font-size: 28px;
+  font-weight: bold;
+}
+
+.close:hover,
+.close:focus {
+  color: black;
+  text-decoration: none;
+  cursor: pointer;
+}
+/* End of Modal Styles */
+
+/* Media Queries */
 @media screen and (max-width: 1280) {
   .container {
     margin: 0;
     width: 100%;
+  }
+  section.profile {
+    width: 30%;
   }
 }
 
@@ -777,6 +861,12 @@ footer {
   .top-bar-tabs .tab-item{
     padding: 16px 10px;
   }
+
+  .logo-text {
+    display: none;
+  }
+
+ 
 }
 
 @media screen and (max-width: 880px){
@@ -790,7 +880,8 @@ footer {
   }
 
   section.profile {
-    flex: 2;
+    
+    width: 30%;
   }
 
   section.repos{
@@ -824,10 +915,19 @@ footer {
 
 
 
-@media screen and (max-width: 768px) {
+@media screen and (max-width: 762px) {
+  section.hero-404 {
+    display: none;
+  }
+
+  .mobile-hero-404{
+    display: block;
+    height: 40vh;
+    background-color: var(--theme-grey);
+  }
+  
   .lg-only {
     display: none;
-    
   }
 
   .logo-text {
