@@ -47,23 +47,24 @@ An example of what the [final result should look like](https://www.google.com/ur
 - [x] Host your site somewhere (Netlify or Github pages)
 
 ## Project Structure 
-```
+```js
 /HubFindr
-  |--404.html
-  |--app.js
-  |--index.html
-  |--profile.html
-  |--README.md
-  |--styles.css
+  |--404.html // For users not found
+  |--app.js   // Main profile page logic
+  |--index.html // Home page 
+  |--profile.html // Profile+Repo results page
+  |--README.md  
+  |--styles.css // holds majority styles
   |--/css
-  |   |--spinner.css
-  |--/js
-      |--gql.js
-      |--home.js
-      |--settings.js
-      |--UI.js
-      |--utils.js
-
+  |   |--spinner.css // loader
+  |--/js 
+      |--gql.js  // Holds query and Enum map objects
+      |--home.js  // Home & 404 page logic
+      |--settings.js // barely used this 
+      |--UI.js // Class for rendering UI
+      |--utils.js // Helper functions
+  |--/.vscode
+      |--settings.json // some personal ide settings
 ```
 
 ## Extra Features 
@@ -74,14 +75,18 @@ These were not specified in the requirements but they made sense to me so I thou
 - [x] 404 page when user not found. (a given, doesn't need to be stated imho)
 - [x] Page Transitions (for a smoother User experience)
 - [x] **All** relevant links should go where they normally would on the ***actual*** website. Such links open in a new tab to indicate their externality (and for a better UX imho)
+- [x] Retry button to handle internet connection errors 
 - [x] Functional navbar input to quick search for users on all pages.
-- [x] Focus on navbar search input on `/` key press (with cool micro-interaction animation)
-- [ ] Input submission on `Enter` key
-- [ ] Search modal available on smaller / mobile devices
-- [ ] Settings modal to allow user change gql variables
+- [x] Focus on navbar search input on `/` key press (with simple micro-interaction animation). Blur on `Escape` key.
+- [x] Input submissions on `Enter` key
+- [x] Search modal available on smaller / mobile devices
+- [x] Settings modal to allow user change gql variables: This means you can do things like: 
+  - [x] Find a Users most starred repo, 
+  - [x] Search for repos alphabetically, by creation date, by last pushed etc, 
+  - [x] Recieve results in ascending or descending order
 - [x] Social Share cards for twitter and facebook.
 - [x] Use images from the buycoinsafrica website to express my enthusiasm for the role
-- [ ] Comment code for readability
+- [x] Comment code for readability
 - [x] `README.md` documention
 
 ## Applied Concepts
@@ -122,7 +127,7 @@ Notable (but deliberate) ommissions with reasons:
 - **Early Submission** : I could have submitted this much earlier (completed the basic requirements roughly 3 days after I became aware of the challenge, *24th May*, became aware on the *21st*), but I thought to leverage the extra time to implement the extra features and take notes.
 - **Missing profile data**: I tried adding the `Achievements` section to the user profiles, but couldn't (for the life of me) find the field with the relevant data on the api. This step also prevented me from adding the rest of the profile data (organizations etc), as well as the `Block or Report` link so as not to distort the 1:1 replication.
 - **API Security**: To handle the `token` security issue, I used a personal 3rd party api (one of my own creation) so the **HubFindr** site could run on github pages. Ideally, this would be handled with *environmental variables*, an *OAuth server*, or some other kind of client authentication mechanism. I felt uneasy about this, but I believe doing so is/was well within the specified requirements.
-- Some Shortcomings: CSS is messy. Too many inline styles especially in template strings. Navbar input styling could be better (i.e. more similar to Github's). Navbar input animation is jittery sometimes.
+- Some Shortcomings: The CSS is a bit messy. Too many inline styles especially in template strings. Navbar input styling could be better (i.e. more similar to Github's). Navbar input animation is jittery sometimes.
 
 ## Contribution
 This is a solo project. And will be shared publicly **only** after the submission deadline (31st May 2021).
@@ -131,7 +136,7 @@ This is a solo project. And will be shared publicly **only** after the submissio
 
 * Many thanks to [@ireade](https://github.com/ireade) for this pretty cool challenge - and for the possibility of working with her and the team at buycoinsafrica.
 * Thanks to [@buycoinsafrica](https://github.com/buycoinsafrica) for the opportunity. It's been my dream to work remotely doing what I love (coding), and getting this job would literally be a dream come true for me. I would be deeply grateful for your kind consideration. 
-* In the unfortunate (but understandable) outcome that I am not selected for the role, I would deeply appreciate any feedback on how to improve not only with regards to this project / job application, but also as a developer in general. I would also appreciate consideration for any other roles that may be available, you may be aware of, or that you believe I would be suited for.
+* In the (_very_) unfortunate but understandable event that I am not selected for the role, I would deeply appreciate any feedback on how to improve not only with regards to this project / job application, but also as a developer in general. I would also appreciate consideration for any other roles that may be available, you may be aware of, or that you believe I would be suited for.
 * And if you reached this point, thank you so much for checking out **HubFindr**, and never forget how _awesome_ you are. I wish you luck on your journey, and please wish me success in my job search and software/dev career. Thanks for reading 😊.
 
 That being said

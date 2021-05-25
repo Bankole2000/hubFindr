@@ -18,10 +18,29 @@
 <body>
   <header>
     <div class="nav">
-      <a onclick="toggleMenu()" style="align-self: center;">
-        <svg class="menu-icon md-down">
+      <a  class="dropdown" style="align-self: center;">
+        <svg onclick="toggleMenu()" class="menu-icon md-down">
           <use xlink:href="#nav-menu-icon" />
         </svg>
+        <div id="mobile-dropdown" class="dropdown-content">
+          <ul>
+            <li>
+              <button onclick="showSettingsModal()" style="padding: 10px; width: 100%; border-radius: 5px; background-color: var(--theme-grey); color: white; display: flex; align-items: center; justify-content: center;">
+                <svg class="nav-icon" style="margin-right: 10px;" width="16" height="16">
+                  <use xlink:href="#settings-icon" />
+                </svg>
+                Settings
+              </button>
+            </li>
+            <li>
+              <button onclick="visitLink('https:\/\/github.com/bankole2000/hubFindr')" style="padding: 10px; width: 100%; border-radius: 5px; background-color: var(--theme-grey); color: white; display: flex; align-items: center; justify-content: center;">
+                <svg class="nav-icon" style="margin-right: 10px;" width="16" height="16">
+                  <use xlink:href="#star-empty-icon" />
+                </svg>
+                Star on Github</button>
+            </li>
+          </ul>
+        </div>
       </a>
       <a href="index.html">
         <svg class="logo nav-icon">
@@ -78,22 +97,81 @@
       </svg>Search</button>
     </section>
   </main>
+  <footer class="md-down">
+    <div style="display: flex; align-items: center; justify-content: center; padding: 10px 0 15px 0;">
+      
+      <span id="copyright">
+      </span>
+      <script type="text/javascript">
+        document.getElementById('copyright').innerHTML = `
+        &copy; ${new Date().getFullYear()} &nbsp;
+        `
+      </script>
+      <a href="https://twitter.com/codingInNeon">Bankole Esan</a>
+    </div>
+  </footer>
 
-  <!-- Modal -->
+  <!-- Settings Modal -->
   <!-- The Modal -->
-<div id="myModal" class="modal">
+  <div id="settings-modal" class="modal">
+    <!-- Modal content -->
+    <div class="modal-content">
+      <div class="modal-header">
+        <h3>App Settings</h3>
+        <span class="close" onclick="hideSettingsModal()">&times;</span>
+      </div>
+      <fieldset>
+        <legend>Search Parameters</legend>
+        <form>
+          <div>
 
-  <!-- Modal content -->
-  <div class="modal-content">
-    <span class="close">&times;</span>
-    <p>Some text in the Modal..</p>
+            <label for="amount">No of repos (20 max)</label>
+            <input onchange="setAmount(this)" oninput="setAmount(this)" type="number" min="1" max="20" placeholder="20" id="amount">
+          </div>
+          <div>
+
+            <label for="field">Order by</label>
+            <select onchange="setField(this)" name="field" value="UPDATED_AT" id="field">
+              <option selected value="UPDATED_AT">Last updated</option>
+              <option value="CREATED_AT">Last created</option>
+              <option value="PUSHED_AT">Last pushed</option>
+              <option value="NAME">Name</option>
+              <option value="STARGAZERS">Number of Stars</option>
+            </select>
+          </div>
+          <div>
+
+            <label for="direction">Direction</label>
+            <select onchange="setDirection(this)" name="direction" id="direction">
+              <option value="ASC">Ascending Order</option>
+              <option selected value="DESC">Descending Order</option>
+            </select>
+          </div>
+          <div>
+            <label for="noOfTopics">No of tags (9 max)</label>
+            <input onchange="setNoOfTopics(this)" oninput="setNoOfTopics(this)" type="number" value="5" id="noOfTopics" min="1" max="9">
+          </div>
+          </form>
+      </fieldset>
+      <div style="text-align: right;">
+
+        <button onclick="hideSettingsModal()" class="btn btn-small">Close</button>
+      </div>
+    </div>
   </div>
-
-</div>
 
   <!-- Page Transition Element + Spinner / Loader -->
   <div id="transition" class="is-active">
     <div class="lds-spinner"><div></div><div></div><div></div><div></div><div></div><div></div><div></div><div></div><div></div><div></div><div></div><div></div></div>
+    <div id="connect-error" style="text-align: center;">
+      <h1 style="margin-top: 10px;">Failed to Connect</h1>
+      <button id="connect-retry" style="font-size: 24px; margin: 16px 0; padding: 8px 24px; border-radius: 6px; cursor: pointer; border: 2px solid var(--theme-grey); color: var(--theme-grey);">Retry</button>
+      <a href="index.html">
+        <h2>
+          Go Home
+        </h2> 
+      </a>
+    </div>
   </div>
 
   <!-- SVG Icons -->

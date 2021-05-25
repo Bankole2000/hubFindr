@@ -279,4 +279,16 @@ export default class UI {
     `
   }
   }
+
+  toggleMenu(){
+    document.querySelector("#mobile-dropdown").classList.toggle("dropdown-show");
+  }
+
+  showSettingsModal(){
+    document.querySelector('#settings-modal').style.display = "block"
+  }
+  
+  hideSettingsModal(){
+    document.querySelector('#settings-modal').style.display = "none"
+  }
 }

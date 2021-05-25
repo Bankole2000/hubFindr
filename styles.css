@@ -688,6 +688,7 @@ a {
   background-color: #fff;
   z-index: 101;
   display: flex;
+  flex-direction: column;
   justify-content: center;
   align-items: center;
   pointer-events: none;
@@ -698,6 +699,10 @@ a {
 #transition.is-active {
   opacity: 1;
   pointer-events: all;
+}
+
+#connect-error{
+  display: none;
 }
 
 .caret-down {
@@ -757,21 +762,45 @@ footer {
 
 .footer-content-left, .footer-content-right {
   flex: 4;
-   display: flex;
-    align-items: center; 
-    justify-content: space-around;
-     flex-wrap: wrap;
+  display: flex;
+  align-items: center; 
+  justify-content: space-around;
+  flex-wrap: wrap;
 }
 
 .footer-content-center {
   flex: 1; 
   display: flex;
-   align-items: center; 
-   justify-content: center; 
+  align-items: center; 
+  justify-content: center; 
 }
 
 .mobile-hero-404 {
   display: none;
+}
+
+section.search-404 {
+  display: flex;
+  flex-direction: column; 
+  justify-content: center;
+  margin: 0 auto;
+  padding: 30px;
+  width: 60%;
+  height: 100%;
+}
+
+section.search-404 div p a{
+  color: var(--theme-grey);
+}
+
+section.search-404 div p {
+  text-align: center;
+  margin: 32px 0 0;
+  font-size: 16px;
+}
+
+section.search-404 div p a:hover {
+  color: var(--theme-blue);
 }
 
 /* Drop Down & Modal */
@@ -783,54 +812,91 @@ footer {
 .dropdown-content {
   display: none;
   position: absolute;
-  left: 0;
-  top: 64px;
-  background-color: #f1f1f1;
-  width: 60%;
-  box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
-  border-radius: 10px;
+  left: -16px;
+  top: 36px;
+  background-color: var(--theme-grey);
+  /* width: 60%; */
+  /* box-shadow: 0px 4px 8px 0px rgba(0,0,0,0.2); */
+  border-radius: 0;
+  /* border-top: 1px solid var(--text-grey); */
   z-index: 5;
+  /* transition: all 0.3s ease; */
 }
 
 .dropdown-content a {
-  
-  
   text-decoration: none;
   display: block;
 }
 
-.show {display:block;}
+
 /* Drop down styles */
 
 /* Modal Styles */
 /* The Modal (background) */
 .modal {
-  display: none; /* Hidden by default */
-  position: fixed; /* Stay in place */
-  z-index: 1; /* Sit on top */
+  display: none; 
+  position: fixed; 
+  z-index: 7; 
   left: 0;
   top: 0;
-  width: 100%; /* Full width */
-  height: 100%; /* Full height */
-  overflow: auto; /* Enable scroll if needed */
-  background-color: rgb(0,0,0); /* Fallback color */
-  background-color: rgba(0,0,0,0.4); /* Black w/ opacity */
+  width: 100%; 
+  height: 100%; 
+  overflow: auto; 
+  background-color: rgba(0,0,0,0.4);
 }
 
 /* Modal Content/Box */
 .modal-content {
-  background-color: #fefefe;
-  margin: 15% auto; /* 15% from the top and centered */
+  background-color: white;
+  margin: 15% auto; 
   padding: 20px;
-  border: 1px solid #888;
-  width: 80%; /* Could be more or less, depending on screen size */
+  border: 1px solid var(--border-grey);
+  border-radius: 5px;
+  width: 80%; 
+}
+
+.modal-content .modal-header{
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.modal-content fieldset {
+  margin-top: 10px;
+  border-radius: 10px;
+  padding: 10px;
+}
+
+.modal-content fieldset legend {
+  padding: 0 10px;
+}
+
+.modal-content fieldset form {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.modal-content fieldset form div select {
+  font-size: 14px;
+  padding: 5px 12px;
+  border: 1px solid var(--border-grey);
+  color: var(--text-black);
+  border-radius: 5px;
+}
+
+.modal-content fieldset form div select:focus {
+  border: 1px solid var(--theme-blue);
+  box-shadow: 0px 0px 0px 3px var(--theme-focus-blue);
+  outline: none;
+  background-color: var(--background-white);
 }
 
 /* The Close Button */
 .close {
-  color: #aaa;
+  color: var(--text-black);
   float: right;
-  font-size: 28px;
+  font-size: 30px;
   font-weight: bold;
 }
 
@@ -920,6 +986,29 @@ footer {
     display: none;
   }
 
+  .modal-content fieldset form {
+    flex-direction: column;
+  }
+
+  .modal-content fieldset form div {
+    margin: 10px 0;
+    font-size: 20px;
+  }
+
+  .modal-content fieldset form div select, .modal-content fieldset form div input {
+    font-size: 20px;
+    color: var(--theme-grey);
+  }
+
+  .dropdown-show {
+    display:block;
+    width: 100vw;
+  }
+
+  section.search-404 {
+    width: 80%;
+  }
+
   .mobile-hero-404{
     display: block;
     height: 40vh;
@@ -971,13 +1060,33 @@ footer {
   }
 
   .footer-content-left a, .footer-content-right a {
-    margin: 3px 10px;
+    margin: 4px 10px;
   }
 }
 
 @media screen and (max-width: 542px) {
   .sm-only {
     display: block;
+  }
+
+  .modal-content {
+    width: 90%;
+  }
+
+
+
+  .dropdown-content ul li {
+    display: block;
+    border-bottom: 1px solid var(--text-grey);
+    padding: 10px;
+  }
+
+  .dropdown-content ul {
+    list-style: none;
+  }
+
+  section.search-404{
+    width: 85%;
   }
   
   .top-bar-tabs .tab-item svg.tab-icon {
@@ -1056,8 +1165,8 @@ footer {
   .top-bar-tabs {
     padding: 0;
     justify-content: space-evenly;
-    
   }
+
   .top-bar-tabs .tab-item .tab-item-text{
     font-size: 10px;
   }
@@ -1069,6 +1178,26 @@ footer {
   p.display-1 {
     font-size: 32px;
     text-align: center;
+  }
+
+  .modal-content fieldset form div {
+    margin: 10px 0;
+    font-size: 14px;
+  }
+
+  .modal-content fieldset form div select, .modal-content fieldset form div input {
+    font-size: 14px;
+    
+  }
+
+  section.search-404 {
+    width: 100%;
+    margin: 32px 0 0;
+    padding: 0 16px;
+  }
+ 
+  section.search-404 p, section.search-404 div p{
+    font-size: 13px;
   }
 
   section.search input.sm-only {
@@ -1083,6 +1212,11 @@ footer {
     height: 60vh;
   }
 
+  .footer-content {
+    padding: 20px 0 0;
+  }
 
-
+  .footer-content-left a, .footer-content-right a {
+    margin: 8px 10px;
+  }
 }

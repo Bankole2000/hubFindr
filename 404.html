@@ -19,14 +19,27 @@
 <body>
   <header>
     <div class="nav">
-      <a onclick="toggleMenu()" class="dropdown" style="align-self: center;">
-        <svg class="menu-icon md-down">
+      <a  class="dropdown" style="align-self: center;">
+        <svg onclick="toggleMenu()" class="menu-icon md-down">
           <use xlink:href="#nav-menu-icon" />
         </svg>
-        <div id="myDropdown" class="dropdown-content">
-          <a href="#">Link 1</a>
-          <a href="#">Link 2</a>
-          <a href="#">Link 3</a>
+        <div id="mobile-dropdown" class="dropdown-content">
+          <ul>
+            <li>
+              <input autocomplete="off" id="mobile-search-input" style="width: 100%;" type="text" class="info" placeholder="Github username...">
+            </li>
+            <li>
+              <button style="padding: 10px; width: 100%; border-radius: 5px;" id="mobile-search-button">Search</button>
+            </li>
+            <li>
+              <button onclick="showSettingsModal()" style="padding: 10px; width: 100%; border-radius: 5px; background-color: var(--theme-grey); color: white; display: flex; align-items: center; justify-content: center;">
+                <svg class="nav-icon" style="margin-right: 10px;" width="16" height="16">
+                  <use xlink:href="#settings-icon" />
+                </svg>
+                Settings
+              </button>
+            </li>
+          </ul>
         </div>
       </a>
       <a href="index.html">
@@ -84,28 +97,35 @@
             <use xlink:href="#github-logo" />
           </svg>
           4</h1>
-          <p style="color: white; font-size: 1.2rem; font-weight: bold;">Didn't find anything here</p>
+          <p style="color: white; font-size: 1.2rem; font-weight: bold;">Didn't find anyone there</p>
       </div>
     </section>
     <section class="search-404">
-      <form class="input-container">
-        <input type="text" class="home-search" id="home-search-input" name="username" placeholder="Github username">
-        <button class="home-search" id="home-search">Search</button>
-      </form>
+      <p style="margin-left: 3px">Find code, projects, and people on Github:</p>
+      <div style="display: flex; width: 100%;">
+        <div style="flex: 1; margin: 10px 10px 10px 0;">
+          <input class="info" id="home-search-input" style="width: 100%;" type="text" placeholder="Github username...">
+        </div>
+        <button class="btn btn-small" id="home-search">Search</button>
+      </div>
+      <div>
+        <p style="text-align:center">
+        <a href="https://support.github.com/contact" target="_blank">Contact Support</a> - <a href="https://githubstatus.com/" target="_blank">Github Status</a> - <a href="https://twitter.com/githubstatus" target="_blank">@gituhbstatus</a>
+        </p>
+      </div>
     </section>
-    <section class="search">
+    <!-- <section class="search">
       <input class="sm-only" type="text" placeholder="Github username..." autocomplete="off" id="mobile-search-input">
       <button class="sm-only" id="mobile-search-button"><svg width="24" height="24">
         <use xlink:href="#search-icon"></use>
       </svg>Search</button>
-    </section>
+    </section> -->
   </main>
   <footer>
     <div class="container content"  >
       <div class="footer-content">
         <div class="footer-content-left">
           <span id="copyright">
-            
           </span>
           <script type="text/javascript">
             document.getElementById('copyright').innerHTML = `
@@ -137,9 +157,68 @@
       
     </div>
   </footer>
+
+    <!-- Settings Modal -->
+  <!-- The Modal -->
+  <div id="settings-modal" class="modal">
+    <!-- Modal content -->
+    <div class="modal-content">
+      <div class="modal-header">
+        <h3>App Settings</h3>
+        <span class="close" onclick="hideSettingsModal()">&times;</span>
+      </div>
+      <fieldset>
+        <legend>Search Parameters</legend>
+        <form>
+          <div>
+
+            <label for="amount">No of repos (20 max)</label>
+            <input onchange="setAmount(this)" oninput="setAmount(this)" type="number" min="1" max="20" placeholder="20" id="amount">
+          </div>
+          <div>
+
+            <label for="field">Order by</label>
+            <select onchange="setField(this)" name="field" value="UPDATED_AT" id="field">
+              <option selected value="UPDATED_AT">Last updated</option>
+              <option value="CREATED_AT">Last created</option>
+              <option value="PUSHED_AT">Last pushed</option>
+              <option value="NAME">Name</option>
+              <option value="STARGAZERS">Number of Stars</option>
+            </select>
+          </div>
+          <div>
+
+            <label for="direction">Direction</label>
+            <select onchange="setDirection(this)" name="direction" id="direction">
+              <option value="ASC">Ascending Order</option>
+              <option selected value="DESC">Descending Order</option>
+            </select>
+          </div>
+          <div>
+            <label for="noOfTopics">No of tags (9 max)</label>
+            <input onchange="setNoOfTopics(this)" oninput="setNoOfTopics(this)" type="number" value="5" id="noOfTopics" min="1" max="9">
+          </div>
+          </form>
+      </fieldset>
+      <div style="text-align: right;">
+
+        <button onclick="hideSettingsModal()" class="btn btn-small">Close</button>
+      </div>
+    </div>
+  </div>
+
     <!-- Transition Element + Loader -->
     <div id="transition" >
       <div class="lds-spinner"><div></div><div></div><div></div><div></div><div></div><div></div><div></div><div></div><div></div><div></div><div></div><div></div></div>
+      <div id="connect-error" style="text-align: center;">
+        <h1 style="margin-top: 10px;">Failed to Connect</h1>
+        <button id="connect-retry" style="font-size: 24px; margin: 16px 0; padding: 8px 24px; border-radius: 6px; cursor: pointer; border: 2px solid var(--theme-grey); color: var(--theme-grey);">Retry</button>
+        <a href="index.html">
+          <h2>
+            Go Home
+          </h2> 
+        </a>
+      </div>
     </div>
 
   <!-- SVG Icons -->

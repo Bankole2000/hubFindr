@@ -18,10 +18,28 @@
 <body>
   <header>
     <div class="nav">
-      <a onclick="toggleMenu()" style="align-self: center;">
-        <svg class="menu-icon md-down">
+      <a  class="dropdown"  style="align-self: center;">
+        <svg class="menu-icon md-down" id="menu-toggle">
           <use xlink:href="#nav-menu-icon" />
         </svg>
+        <div id="mobile-dropdown" class="dropdown-content">
+          <ul>
+            <li>
+              <input autocomplete="off" id="mobile-search-input" style="width: 100%;" type="text" class="info" placeholder="Github username...">
+            </li>
+            <li>
+              <button style="padding: 10px; width: 100%; border-radius: 5px;" id="mobile-search-button">Search</button>
+            </li>
+            <li>
+              <button class="show-settings-modal" style="padding: 10px; width: 100%; border-radius: 5px; background-color: var(--theme-grey); color: white; display: flex; align-items: center; justify-content: center;">
+                <svg class="nav-icon" style="margin-right: 10px;" width="16" height="16">
+                  <use xlink:href="#settings-icon" />
+                </svg>
+                Settings
+              </button>
+            </li>
+          </ul>
+        </div>
       </a>
       <a href="index.html">
         <svg class="logo nav-icon">
@@ -44,14 +62,14 @@
         </svg>
         <span class="notification-badge"></span>
       </a>    
-      <svg class="nav-icon lg-only" viewBox="0 0 16 16" height="16" width="16">
+      <svg style="cursor: pointer;" class="nav-icon lg-only show-settings-modal" viewBox="0 0 16 16" height="16" width="16">
         <use xlink:href="#plus-icon" />
       </svg> 
-      <span class="caret-down lg-only">&#9660;</span> 
-      <div class="small-avatar-container lg-only">
+      <span class="caret-down lg-only show-settings-modal">&#9660;</span> 
+      <div style="cursor: pointer;" class="small-avatar-container lg-only show-settings-modal">
         <img loading="lazy" class="small-avatar" id="nav-avatar"/>
       </div>
-      <span class="caret-down lg-only">&#9660;</span>
+      <span class="caret-down lg-only show-settings-modal">&#9660;</span>
     </div>
   </header>
   <main>
@@ -174,9 +192,67 @@
     </div>
   </footer>
 
+  <!-- Settings Modal -->
+  <!-- The Modal -->
+  <div id="settings-modal" class="modal">
+    <!-- Modal content -->
+    <div class="modal-content">
+      <div class="modal-header">
+        <h3>App Settings</h3>
+        <span class="close" id="hide-settings-modal">&times;</span>
+      </div>
+      <fieldset>
+        <legend>Search Parameters</legend>
+        <form>
+          <div>
+
+            <label for="amount">No of repos (20 max)</label>
+            <input type="number" min="1" max="20" placeholder="20" id="amount">
+          </div>
+          <div>
+
+            <label for="field">Order by</label>
+            <select name="field" value="UPDATED_AT" id="field">
+              <option selected value="UPDATED_AT">Last updated</option>
+              <option value="CREATED_AT">Last created</option>
+              <option value="PUSHED_AT">Last pushed</option>
+              <option value="NAME">Name</option>
+              <option value="STARGAZERS">Number of Stars</option>
+            </select>
+          </div>
+          <div>
+
+            <label for="direction">Direction</label>
+            <select name="direction" id="direction">
+              <option value="ASC">Ascending Order</option>
+              <option selected value="DESC">Descending Order</option>
+            </select>
+          </div>
+          <div>
+            <label for="noOfTopics">No of tags (9 max)</label>
+            <input type="number" value="5" id="noOfTopics" min="1" max="9">
+          </div>
+          </form>
+      </fieldset>
+      <div style="text-align: right;">
+
+        <button id="hide-settings-button" class="btn btn-small">Close</button>
+      </div>
+    </div>
+  </div>
+
   <!-- Transition Element + Loader -->
   <div id="transition" class="is-active">
     <div class="lds-spinner"><div></div><div></div><div></div><div></div><div></div><div></div><div></div><div></div><div></div><div></div><div></div><div></div></div>
+    <div id="connect-error" style="text-align: center;">
+      <h1 style="margin-top: 10px;">Failed to Connect</h1>
+      <button id="connect-retry" style="font-size: 24px; margin: 16px 0; padding: 8px 24px; border-radius: 6px; cursor: pointer; border: 2px solid var(--theme-grey); color: var(--theme-grey);">Retry</button>
+      <a href="index.html">
+        <h2>
+          Go Home
+        </h2> 
+      </a>
+    </div>
   </div>
 
   <!-- SVG Icons -->

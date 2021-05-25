@@ -68,7 +68,7 @@ export const fieldsEnum = {
   UPDATED_AT : 'last updated',
   PUSHED_AT: 'pushed at',
   NAME: 'name',
-  STARGAZERS: 'stargazers'
+  STARGAZERS: 'no of stars'
 }
 
 export const directionEnum = {
