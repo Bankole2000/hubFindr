@@ -67,7 +67,7 @@ export const fieldsEnum = {
   CREATED_AT : 'created at', 
   UPDATED_AT : 'last updated',
   PUSHED_AT: 'last pushed to',
-  NAME: 'alphabetically',
+  NAME: 'name',
   STARGAZERS: 'no of stars'
 }
 
