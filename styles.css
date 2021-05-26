@@ -1107,6 +1107,11 @@ section.search-404 div p a:hover {
     margin-top: 0;
   }
 
+  .repo-desc {
+    word-break: break-word;
+    font-size: 12px;
+  }
+
   .home-page::before {
     background-image: url('images/hero-bg-mobile.png');
   }
