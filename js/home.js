@@ -95,6 +95,7 @@ if(!token){
   fetch('https://cribba-api.herokuapp.com/')
     .then(res => res.json())
     .then(data => {
+      console.log({data});
       const {hubFindrToken} = data;
       localStorage.setItem('hubFindrToken', hubFindrToken)
       transitionElement.classList.remove('is-active');

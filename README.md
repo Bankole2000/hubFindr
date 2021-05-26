@@ -111,7 +111,10 @@ None of these are new concepts to me. Just the specific ones I used this particu
 * SVG Icons (symbol referencing and styling)
 * `@media` Breakpoints (major and minor)
 
-## Deliberate Omissions. <small>(i.e. possible enhancements / future development / rationales)</small>
+## Deliberate Omissions. 
+
+<small>(i.e. possible enhancements / future development / rationales)</small>
+
 Notable (but deliberate) ommissions with reasons: 
 * **JS/CSS Minification** - Normally I would do this, but I imagined that the code would be inspected, and thus decided against it.
 * **Form Validation** - Ideally, users shouldn't be able to submit required input fields empty - ***But*** (4 reasons): 

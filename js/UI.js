@@ -26,7 +26,7 @@ export default class UI {
       <p><span>${user.status?.emojiHTML ? user.status.emojiHTML : '💭'}</span><span>&nbsp; ${user.status?.message ? user.status.message : ''}</span></p>
     </div>
     <p style="margin-top: 10px">${user.bio ? user.bio : ''}</p>
-    <a href="https://github.com/${user.login}?tab=repositories" target="_blank" style="width: 100%; border: 1px solid var(--border-grey); padding: 5px; display: block; text-align: center; margin: 10px 0px; border-radius: 5px; color: var(--text-black)">Follow</a>
+    <a href="https://github.com/${user.login}?tab=repositories" target="_blank" rel="noreferrer" style="width: 100%; border: 1px solid var(--border-grey); padding: 5px; display: block; text-align: center; margin: 10px 0px; border-radius: 5px; color: var(--text-black)">Follow</a>
     <p class="profile-contact-item" style="display: ${user.company ? 'block': 'none'}">
       <svg class="profile-icon" viewBox="0 0 16 16" height="16" width="16">
         <use xlink:href="#company-icon" />
@@ -44,20 +44,20 @@ export default class UI {
       </svg>
     ${user.email}</a></p>
     <p class="profile-contact-item" style="display: ${user.websiteUrl ? 'block': 'none'}">
-    <a href="${user.websiteUrl}" target="_blank">
+    <a href="${user.websiteUrl}" target="_blank" rel="noreferrer">
       <svg class="profile-icon" viewBox="0 0 16 16" height="16" width="16">
         <use xlink:href="#website-icon" />
       </svg>
     ${user.websiteUrl}</a></p>
     <p class="profile-contact-item" style="display: ${user.twitterUsername ? 'block': 'none'}">
-    <a href="https://twitter.com/${user.twitterUsername}" target="_blank">
+    <a href="https://twitter.com/${user.twitterUsername}" target="_blank" rel="noreferrer">
       <svg class="profile-icon" viewBox="0 0 16 16" height="16" width="16">
         <use xlink:href="#twitter-icon" />
       </svg>
     ${user.twitterUsername}</a></p>
     <div style="margin-bottom: 16px; display: flex; align-items: center; justify-content: flex-start; font-size: 13px; flex-wrap: wrap;">
       <span style="display: flex; align-items: center;">
-        <a class="following" href="https://github.com/${user.login}?tab=followers" target="_blank" style="display: flex; align-items: center;">
+        <a class="following" href="https://github.com/${user.login}?tab=followers" target="_blank" rel="noreferrer" style="display: flex; align-items: center;">
           <svg class="profile-icon" viewBox="0 0 16 16" height="16" width="16">
             <use xlink:href="#followers-icon" />
           </svg>
@@ -66,13 +66,13 @@ export default class UI {
         </a> &middot; &nbsp;
       </span>
       <span style="display: flex; align-items: center;">
-        <a class="following" href="https://github.com/${user.login}?tab=following" target="_blank">
+        <a class="following" href="https://github.com/${user.login}?tab=following" target="_blank" rel="noreferrer">
           <span style="font-weight: 500;">${user.following.totalCount > 1000 ? (user.following.totalCount/1000).toFixed(1)+'k' : user.following.totalCount}</span> 
           following &nbsp;
         </a>&middot;
       </span>
       <span style="display: flex; align-items: center;">
-        <a class="following" href="https://github.com/${user.login}?tab=stars" target="_blank" style="display: flex; align-items: center;">
+        <a class="following" href="https://github.com/${user.login}?tab=stars" target="_blank" rel="noreferrer" style="display: flex; align-items: center;">
           <svg class="profile-icon" viewBox="0 0 16 16" height="16" width="16">
             <use xlink:href="#star-empty-icon" />
           </svg>
@@ -96,10 +96,10 @@ export default class UI {
     <h1 class="profile-name" id="profile-name">${user.name ? user.name : ''}</h1>
     <h2 class="profile-username">${user.login}</h2>
     <p class="profile-short-bio">${user.bio ? user.bio : ''}</p>
-    <a href="https://github.com/${user.login}?tab=repositories" target="_blank"><button class="btn btn-small btn-block"><p style="font-size: 15px; line-height: 30px">Follow</p></button></a>
+    <a href="https://github.com/${user.login}?tab=repositories" target="_blank" rel="noreferrer"><button class="btn btn-small btn-block"><p style="font-size: 15px; line-height: 30px">Follow</p></button></a>
     <div style="margin-bottom: 16px; display: flex; align-items: center; justify-content: flex-start; font-size: 13px; flex-wrap: wrap;">
       <span style="display: flex; align-items: center;">
-        <a class="following" href="https://github.com/${user.login}?tab=followers" target="_blank" style="display: flex; align-items: center;">
+        <a class="following" href="https://github.com/${user.login}?tab=followers" target="_blank" rel="noreferrer" style="display: flex; align-items: center;">
           <svg class="profile-icon" viewBox="0 0 16 16" height="16" width="16">
             <use xlink:href="#followers-icon" />
           </svg>
@@ -108,13 +108,13 @@ export default class UI {
         </a> &middot; &nbsp;
       </span>
       <span style="display: flex; align-items: center;">
-        <a class="following" href="https://github.com/${user.login}?tab=following" target="_blank">
+        <a class="following" href="https://github.com/${user.login}?tab=following" target="_blank" rel="noreferrer">
           <span style="font-weight: 500;">${user.following.totalCount > 1000 ? (user.following.totalCount/1000).toFixed(1) + 'k' : user.following.totalCount}</span> 
           following &nbsp;
         </a>&middot;
       </span>
       <span style="display: flex; align-items: center;">
-        <a class="following" href="https://github.com/${user.login}?tab=stars" target="_blank" style="display: flex; align-items: center;">
+        <a class="following" href="https://github.com/${user.login}?tab=stars" target="_blank" rel="noreferrer" style="display: flex; align-items: center;">
           <svg class="profile-icon" viewBox="0 0 16 16" height="16" width="16">
             <use xlink:href="#star-empty-icon" />
           </svg>
@@ -142,13 +142,13 @@ export default class UI {
       </svg>
     ${user.email}</a></p>
     <p class="profile-contact-item" style="display: ${user.websiteUrl ? 'block': 'none'}">
-    <a href="${user.websiteUrl}" target="_blank">
+    <a href="${user.websiteUrl}" target="_blank" rel="noreferrer">
       <svg class="profile-icon" viewBox="0 0 16 16" height="16" width="16">
         <use xlink:href="#website-icon" />
       </svg>
     ${user.websiteUrl}</a></p>
     <p class="profile-contact-item" style="display: ${user.twitterUsername ? 'block': 'none'}">
-    <a href="https://twitter.com/${user.twitterUsername}" target="_blank">
+    <a href="https://twitter.com/${user.twitterUsername}" target="_blank" rel="noreferrer">
       <svg class="profile-icon" viewBox="0 0 16 16" height="16" width="16">
         <use xlink:href="#twitter-icon" />
       </svg>
@@ -210,14 +210,14 @@ export default class UI {
         let html = '';
         if(topics.length){
           topics.forEach(topic => {
-            html += `<div class="tag-topic"><a href="${topic.url}" target="_blank">${topic.topic.name}</a></div>`
+            html += `<div class="tag-topic"><a href="${topic.url}" target="_blank" rel="noreferrer">${topic.topic.name}</a></div>`
           })
         }
         return html;
       }
       const renderStargazerHTML = () => {
         if(stargazerCount){
-          return `<a href="${repo.url}/stargazers" target="_blank" class="repo-info-item link-item">
+          return `<a href="${repo.url}/stargazers" target="_blank" rel="noreferrer" class="repo-info-item link-item">
           <svg class="repo-info-icon">
             <use xlink:href="#star-empty-icon" />
           </svg>   
@@ -228,7 +228,7 @@ export default class UI {
       }
       const renderForkHTML = () => {
         if(forkCount){
-          return `<a href="${repo.url}/network/members" target="_blank" class="repo-info-item link-item">
+          return `<a href="${repo.url}/network/members" target="_blank" rel="noreferrer" class="repo-info-item link-item">
           <svg class="repo-info-icon">
             <use xlink:href="#fork-icon" />
           </svg>   
@@ -240,7 +240,7 @@ export default class UI {
       this.repos.innerHTML += `
       <div class="repo-item">
       <div class="repo-item-details">
-        <h1 class="repo-title"><a href="${repo.url}" target="_blank">${repo.name}</a></h1>
+        <h1 class="repo-title"><a href="${repo.url}" target="_blank" rel="noreferrer">${repo.name}</a></h1>
         <p class="repo-desc">${repo.shortDescriptionHTML}</p>
         <div class="repo-tags">
           ${topicsHTML()}
@@ -257,7 +257,7 @@ export default class UI {
           </span>
         </div>
       </div>
-      <a href="${repo.url}" target="_blank" class="repo-item-button">
+      <a href="${repo.url}" target="_blank" rel="noreferrer" class="repo-item-button">
         <button class="btn btn-small" style="display: flex; align-items: center; justify-content: space-evenly;">
           <svg class="btn-icon btn-icon-left">
             <use xlink:href="#star-filled-icon" />

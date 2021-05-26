@@ -253,7 +253,7 @@ main .topbar {
 .top-bar-tabs .tab-item{
   padding: 10px 20px;
   font-weight: 400;
-  color: var(--text-grey);
+  color: var(--text-black);
   font-size: 15px;
   border-bottom: 2px solid transparent;
   display: flex;
