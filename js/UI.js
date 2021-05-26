@@ -161,7 +161,9 @@ export default class UI {
    const topBarLink = this.topBarProfile.querySelector('#top-bar-profile-link');
    const topBarName = this.topBarProfile.querySelector('#top-bar-profile-name');
    topBarAvatar.setAttribute('src', user.avatarUrl);
-   topBarLink.setAttribute('href', `https://github.com/${user.login}?tab=repositories`)
+   topBarLink.setAttribute('href', `https://github.com/${user.login}?tab=repositories`);
+   topBarLink.setAttribute('target', `_blank`);
+   topBarLink.setAttribute('rel', `noreferrer`);
    topBarName.textContent = user.login
   }
 

@@ -107,5 +107,5 @@ if(!token){
 } else {
   setTimeout(() => {
     transitionElement.classList.remove('is-active');
-  }, 400);
+  }, 200);
 }

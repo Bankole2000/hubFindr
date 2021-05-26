@@ -147,7 +147,7 @@ if(window.location.pathname == `/profile.html` || window.location.pathname == `/
           })
         }, options)
         observer.observe(targetSection);
-      }, 400);
+      }, 200);
     })
   })
   .catch((err) => {
