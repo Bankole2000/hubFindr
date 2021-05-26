@@ -101,7 +101,6 @@ None of these are new concepts to me. Just the specific ones I used this particu
 * ES6 Classes
 * Imports and Exports (yes, you can actually do that in vanilla JS too, lol😂)
 * Error Handling
-* Auth, Security and environmental variables
 * Intersection Observer
 * Asynchronous programming
 * Url Parameters and Dynamic routing
@@ -115,7 +114,7 @@ None of these are new concepts to me. Just the specific ones I used this particu
 ## Deliberate Omissions. <small>(i.e. possible enhancements / future development / rationales)</small>
 Notable (but deliberate) ommissions with reasons: 
 * **JS/CSS Minification** - Normally I would do this, but I imagined that the code would be inspected, and thus decided against it.
-* **Form Validation** - Ideally, users shouldn't to be able to submit required input fields empty - ***But*** (4 reasons): 
+* **Form Validation** - Ideally, users shouldn't be able to submit required input fields empty - ***But*** (4 reasons): 
   1) There is a profile with the unlikely username `null`, and I figured this would be an interesting find/experience for users. This `null` user also doubled as a the `sample` profile on the website.
   2) Allowing empty search inputs eliminated the need for hinting, error/success messages, alerts etc - making a more seamless experience imho.
   3) I wanted to make the 404 page easier to reach. And 
@@ -131,7 +130,7 @@ Notable (but deliberate) ommissions with reasons:
 - **Early Submission** : I could have submitted this much earlier (completed the basic requirements roughly 3 days after I became aware of the challenge, *24th May*, became aware on the *21st*), but I thought to leverage the extra time to implement the extra features and take notes.
 - **Missing profile data**: I tried adding the `Achievements` section to the user profiles, but couldn't (for the life of me) find the field with the relevant data on the api. This step also prevented me from adding the rest of the profile data (organizations etc), as well as the `Block or Report` link so as not to distort the 1:1 replication.
 - **API Security**: To handle the `token` security issue, I used a personal 3rd party api (one of my own creation) so the **HubFindr** site could run on github pages. Ideally, this would be handled with *environmental variables*, an *OAuth server*, or some other kind of client authentication mechanism. I felt uneasy about this, but I believe doing so is/was well within the specified requirements.
-- Room for improvements: The CSS is a bit messy. Too many inline styles especially in template strings. Navbar input styling could be better (i.e. more similar to Github's). Navbar input animation is jittery sometimes.
+- Room for improvements: The CSS is a bit messy. Too many inline styles especially in template strings. Navbar input and mobile Footer styling could be better (i.e. more similar to Github's). Navbar input animation is jittery sometimes.
 
 ## Contribution
 This is a solo project. And will be shared publicly **only** after the submission deadline (31st May 2021).

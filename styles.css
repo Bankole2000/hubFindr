@@ -909,16 +909,6 @@ section.search-404 div p a:hover {
 /* End of Modal Styles */
 
 /* Media Queries */
-@media screen and (max-width: 1280) {
-  .container {
-    margin: 0;
-    width: 100%;
-  }
-  section.profile {
-    width: 30%;
-  }
-}
-
 @media screen and (max-width: 970px) {
   .top-bar-tabs {
     align-items: flex-end;
@@ -927,12 +917,9 @@ section.search-404 div p a:hover {
   .top-bar-tabs .tab-item{
     padding: 16px 10px;
   }
-
   .logo-text {
     display: none;
   }
-
- 
 }
 
 @media screen and (max-width: 880px){
@@ -952,6 +939,9 @@ section.search-404 div p a:hover {
 
   section.repos{
     flex: 10;
+  }
+  .modal-content {
+    width: 90%;
   }
 
   .top-bar-tabs .tab-item{
