@@ -81,7 +81,7 @@ header input {
   left: 0;
   width: 100%; 
   height: calc(100% - 64px);
-  background-image: url('images/hero-bg-2x.png'); 
+  background-image: url('images/hero-bg-2x.png.webp'); 
   background-size: cover; 
   background-position: center 40vh; 
   background-repeat: no-repeat;
@@ -1103,7 +1103,7 @@ section.search-404 div p a:hover {
   }
 
   .home-page::before {
-    background-image: url('images/hero-bg-mobile.png');
+    background-image: url('images/hero-bg-mobile.png.webp');
   }
 
   .input-container {
