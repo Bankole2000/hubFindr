@@ -20,7 +20,7 @@
 <body>
   <header>
     <div class="nav">
-      <a  class="dropdown" style="align-self: center;">
+      <a  class="dropdown">
         <svg onclick="toggleMenu()" class="menu-icon md-down">
           <use xlink:href="#nav-menu-icon" />
         </svg>
@@ -30,10 +30,10 @@
               <input autocomplete="off" id="mobile-search-input" style="width: 100%;" type="text" class="info" placeholder="Github username...">
             </li>
             <li>
-              <button style="padding: 10px; width: 100%; border-radius: 5px;" id="mobile-search-button">Search</button>
+              <button class="dropdown-btn" id="mobile-search-button">Search</button>
             </li>
             <li>
-              <button onclick="showSettingsModal()" style="padding: 10px; width: 100%; border-radius: 5px; background-color: var(--theme-grey); color: white; display: flex; align-items: center; justify-content: center;">
+              <button onclick="showSettingsModal()" class="dropdown-btn">
                 <svg class="nav-icon" style="margin-right: 10px;" width="16" height="16">
                   <use xlink:href="#settings-icon" />
                 </svg>
@@ -49,7 +49,7 @@
         </svg>
       </a>
       <div class="search-input-container lg-only">
-        <input class="input" id="nav-search-input" type="text" placeholder="Search or jump to...">
+        <input class="input" id="nav-search-input" type="text" autocomplete="off" placeholder="Search or jump to...">
       </div>
       <ul class="lg-only">
         <li><a href="https://github.com/pulls" target="_blank" rel="noreferrer">Pull Requests</a></li>
@@ -80,15 +80,15 @@
   </header>
   <main >
     <section class="hero-404">
-      <div style="margin: 0 50px; display: flex; flex-direction: column; justify-content: center;">
-        <h1 class="display-1" style="text-align: center; color: white; text-shadow: 1px 1px 3px rgba(0, 0, 0, 0.5);">404</h1>
-        <div style="padding: 15px; background-color: white; max-width: 250px; border-radius: 20px; position: relative; box-shadow: 1px 1px 3px rgba(0, 0, 0, 0.5);">
+      <div class="message-container-lg">
+        <h1 class="display-1" >404</h1>
+        <div class="message-box">
           <p class="display-2" style="text-align: center;">We couldn't find anyone with that username</p>
           <div class="arrow-right-404"></div>
         </div>
       </div>
-      <div style="width: 230px; height: 230px;">
-        <img src="images/octocat-2.png.webp" height="100%">
+      <div class="obiwan-octocat">
+        <img src="images/octocat-2.png.webp" alt="Obiwan kenobi octocat" height="100%">
       </div>
     </section>
     <section class="mobile-hero-404">
@@ -105,7 +105,7 @@
       <p style="margin-left: 3px">Find code, projects, and people on Github:</p>
       <div style="display: flex; width: 100%;">
         <div style="flex: 1; margin: 10px 10px 10px 0;">
-          <input class="info" id="home-search-input" style="width: 100%;" type="text" placeholder="Github username...">
+          <input class="info" id="home-search-input" autocomplete="off" style="width: 100%;" type="text" placeholder="Github username...">
         </div>
         <button class="btn btn-small" id="home-search">Search</button>
       </div>
@@ -115,15 +115,10 @@
         </p>
       </div>
     </section>
-    <!-- <section class="search">
-      <input class="sm-only" type="text" placeholder="Github username..." autocomplete="off" id="mobile-search-input">
-      <button class="sm-only" id="mobile-search-button"><svg width="24" height="24">
-        <use xlink:href="#search-icon"></use>
-      </svg>Search</button>
-    </section> -->
+    
   </main>
   <footer>
-    <div class="container content"  >
+    <div class="container content">
       <div class="footer-content">
         <div class="footer-content-left">
           <span id="copyright">
@@ -189,7 +184,7 @@
           </div>
           <div>
 
-            <label for="direction">Direction</label>
+            <label for="direction">In</label>
             <select onchange="setDirection(this)" name="direction" id="direction">
               <option value="ASC">Ascending Order</option>
               <option selected value="DESC">Descending Order</option>
@@ -213,7 +208,7 @@
       <div class="lds-spinner"><div></div><div></div><div></div><div></div><div></div><div></div><div></div><div></div><div></div><div></div><div></div><div></div></div>
       <div id="connect-error" style="text-align: center;">
         <h1 style="margin-top: 10px;">Failed to Connect</h1>
-        <button id="connect-retry" style="font-size: 24px; margin: 16px 0; padding: 8px 24px; border-radius: 6px; cursor: pointer; border: 2px solid var(--theme-grey); color: var(--theme-grey);">Retry</button>
+        <button id="connect-retry">Retry</button>
         <a href="index.html">
           <h2>
             Go Home

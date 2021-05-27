@@ -22,11 +22,10 @@ export default class UI {
     </div>
   </div>
   <div style="padding: 0 16px; border-bottom: 1px solid var(--border-grey)">
-    <div style="display: flex; padding: 4px 8px; border: 1px solid var(--border-grey); border-radius: 10px;">
+    <div style="display: ${user.status ? 'flex': 'none'}; padding: 4px 8px; border: 1px solid var(--border-grey); border-radius: 10px;">
       <p><span>${user.status?.emojiHTML ? user.status.emojiHTML : '💭'}</span><span>&nbsp; ${user.status?.message ? user.status.message : ''}</span></p>
     </div>
-    <p style="margin-top: 10px">${user.bio ? user.bio : ''}</p>
-    <a href="https://github.com/${user.login}?tab=repositories" target="_blank" rel="noreferrer" style="width: 100%; border: 1px solid var(--border-grey); padding: 5px; display: block; text-align: center; margin: 10px 0px; border-radius: 5px; color: var(--text-black)">Follow</a>
+    <p style="margin-top: 10px; margin-bottom: 20px;">${user.bio ? user.bio : ''}</p>
     <p class="profile-contact-item" style="display: ${user.company ? 'block': 'none'}">
       <svg class="profile-icon" viewBox="0 0 16 16" height="16" width="16">
         <use xlink:href="#company-icon" />
@@ -80,6 +79,8 @@ export default class UI {
         </a>
       </span>
     </div>
+    <a href="https://github.com/${user.login}?tab=repositories" target="_blank" rel="noreferrer" style="width: 100%; border: 1px solid var(--border-grey); padding: 5px; display: block; text-align: center; margin: 10px 0px; border-radius: 5px; color: var(--text-black)">Follow</a>
+
   </div>
     `
     

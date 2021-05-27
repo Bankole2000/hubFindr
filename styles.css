@@ -191,6 +191,33 @@ section.hero-404 {
   justify-content: center;
 }
 
+section.hero-404 .message-container-lg {
+  margin: 0 50px; 
+  display: flex; 
+  flex-direction: column; 
+  justify-content: center;
+}
+
+section.hero-404 .message-container-lg .display-1 {
+  text-align: center; 
+  color: white; 
+  text-shadow: 1px 1px 3px rgba(0, 0, 0, 0.5);
+}
+
+section.hero-404 .message-container-lg .message-box {
+  padding: 15px; 
+  background-color: white; 
+  max-width: 250px; 
+  border-radius: 20px; 
+  position: relative; 
+  box-shadow: 1px 1px 3px rgba(0, 0, 0, 0.5);
+}
+
+section.hero-404 .obiwan-octocat {
+  width: 230px; 
+  height: 230px;
+}
+
 .arrow-right-404 {
   width: 0; 
   height: 0; 
@@ -705,6 +732,16 @@ a {
   display: none;
 }
 
+#connect-retry {
+  font-size: 24px; 
+  margin: 16px 0; 
+  padding: 8px 24px; 
+  border-radius: 6px; 
+  cursor: pointer; 
+  border: 2px solid var(--theme-grey); 
+  color: var(--theme-grey);
+}
+
 .caret-down {
   margin-right: 16px; 
   font-size: small;
@@ -751,8 +788,8 @@ footer {
 
 .footer-content {
   width: 100%;
-  margin: 30px 0 20px;
-  padding: 50px 0 8px; 
+  margin: 20px 0 20px;
+  padding: 30px 0 8px; 
   display: flex;
   align-items: center;
   justify-content: center;
@@ -828,8 +865,17 @@ section.search-404 div p a:hover {
   display: block;
 }
 
-
-/* Drop down styles */
+.dropdown-btn {
+  padding: 10px; 
+  width: 100%; 
+  border-radius: 5px; 
+  background-color: var(--theme-grey); 
+  color: white; 
+  display: flex; 
+  align-items: center; 
+  justify-content: center;
+}
+/* End of Drop down styles */
 
 /* Modal Styles */
 /* The Modal (background) */
@@ -972,6 +1018,18 @@ section.search-404 div p a:hover {
 
 
 @media screen and (max-width: 762px) {
+  .home-page-footer {
+    background-color: var(--theme-grey); 
+    color: white; 
+    display: flex; 
+    align-items: center; 
+    justify-content: center; 
+    padding: 10px;
+  }
+
+  .home-page-footer a {
+    color: white;
+  }
   svg.logo {
     margin-right: 0px;
   }
@@ -1052,12 +1110,15 @@ section.search-404 div p a:hover {
     text-align: center;
   }
   .footer-content-left, .footer-content-right {
-    display: inline;
+    display: inline-block;
     text-align: center;
   }
 
   .footer-content-left a, .footer-content-right a {
-    margin: 4px 10px;
+    display: inline-block;
+    padding: 6px;
+    
+    
   }
 }
 
@@ -1218,7 +1279,7 @@ section.search-404 div p a:hover {
     padding: 20px 0 0;
   }
 
-  .footer-content-left a, .footer-content-right a {
-    margin: 8px 10px;
+  .footer-content-left  {
+    margin-top: 10px;
   }
 }

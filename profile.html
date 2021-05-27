@@ -19,7 +19,7 @@
 <body>
   <header>
     <div class="nav">
-      <a  class="dropdown" aria-label="Dropdown link Icon" href="#"  style="align-self: center;">
+      <a  class="dropdown" aria-label="Dropdown link Icon">
         <svg class="menu-icon md-down" id="menu-toggle">
           <use xlink:href="#nav-menu-icon" />
         </svg>
@@ -29,10 +29,10 @@
               <input autocomplete="off" id="mobile-search-input" style="width: 100%;" type="text" class="info" placeholder="Github username...">
             </li>
             <li>
-              <button style="padding: 10px; width: 100%; border-radius: 5px;" id="mobile-search-button">Search</button>
+              <button class="dropdown-btn" id="mobile-search-button">Search</button>
             </li>
             <li>
-              <button class="show-settings-modal" style="padding: 10px; width: 100%; border-radius: 5px; background-color: var(--theme-grey); color: white; display: flex; align-items: center; justify-content: center;">
+              <button class="show-settings-modal dropdown-btn">
                 <svg class="nav-icon" style="margin-right: 10px;" width="16" height="16">
                   <use xlink:href="#settings-icon" />
                 </svg>
@@ -223,7 +223,7 @@
           </div>
           <div>
 
-            <label for="direction">Direction</label>
+            <label for="direction">In</label>
             <select name="direction" id="direction">
               <option value="ASC">Ascending Order</option>
               <option selected value="DESC">Descending Order</option>
@@ -247,7 +247,7 @@
     <div class="lds-spinner"><div></div><div></div><div></div><div></div><div></div><div></div><div></div><div></div><div></div><div></div><div></div><div></div></div>
     <div id="connect-error" style="text-align: center;">
       <h1 style="margin-top: 10px;">Failed to Connect</h1>
-      <button id="connect-retry" style="font-size: 24px; margin: 16px 0; padding: 8px 24px; border-radius: 6px; cursor: pointer; border: 2px solid var(--theme-grey); color: var(--theme-grey);">Retry</button>
+      <button id="connect-retry">Retry</button>
       <a href="index.html">
         <h2>
           Go Home

@@ -19,14 +19,14 @@
 <body>
   <header>
     <div class="nav">
-      <a  class="dropdown" style="align-self: center;">
+      <a  class="dropdown">
         <svg onclick="toggleMenu()" class="menu-icon md-down">
           <use xlink:href="#nav-menu-icon" />
         </svg>
         <div id="mobile-dropdown" class="dropdown-content">
           <ul>
             <li>
-              <button onclick="showSettingsModal()" style="padding: 10px; width: 100%; border-radius: 5px; background-color: var(--theme-grey); color: white; display: flex; align-items: center; justify-content: center;">
+              <button onclick="showSettingsModal()" class="dropdown-btn">
                 <svg class="nav-icon" style="margin-right: 10px;" width="16" height="16">
                   <use xlink:href="#settings-icon" />
                 </svg>
@@ -34,7 +34,7 @@
               </button>
             </li>
             <li>
-              <button onclick="visitLink('https:\/\/github.com/bankole2000/hubFindr')" style="padding: 10px; width: 100%; border-radius: 5px; background-color: var(--theme-grey); color: white; display: flex; align-items: center; justify-content: center;">
+              <button onclick="visitLink('https:\/\/github.com/bankole2000/hubFindr')" class="dropdown-btn">
                 <svg class="nav-icon" style="margin-right: 10px;" width="16" height="16">
                   <use xlink:href="#star-empty-icon" />
                 </svg>
@@ -99,7 +99,7 @@
     </section>
   </main>
   <footer class="md-down" style="position: relative;">
-    <div style="background-color: var(--theme-grey); color: white; display: flex; align-items: center; justify-content: center; padding: 10px;">
+    <div class="home-page-footer">
       
       <span id="copyright">
       </span>
@@ -108,7 +108,7 @@
         &copy; ${new Date().getFullYear()} &nbsp;
         `
       </script>
-      <a style="color: white;" href="https://twitter.com/codingInNeon">Bankole Esan</a>
+      <a href="https://twitter.com/codingInNeon">Bankole Esan</a>
     </div>
   </footer>
 
@@ -142,7 +142,7 @@
           </div>
           <div>
 
-            <label for="direction">Direction</label>
+            <label for="direction">In</label>
             <select onchange="setDirection(this)" name="direction" id="direction">
               <option value="ASC">Ascending Order</option>
               <option selected value="DESC">Descending Order</option>
@@ -166,7 +166,7 @@
     <div class="lds-spinner"><div></div><div></div><div></div><div></div><div></div><div></div><div></div><div></div><div></div><div></div><div></div><div></div></div>
     <div id="connect-error" style="text-align: center;">
       <h1 style="margin-top: 10px;">Failed to Connect</h1>
-      <button id="connect-retry" style="font-size: 24px; margin: 16px 0; padding: 8px 24px; border-radius: 6px; cursor: pointer; border: 2px solid var(--theme-grey); color: var(--theme-grey);">Retry</button>
+      <button id="connect-retry">Retry</button>
       <a href="index.html">
         <h2>
           Go Home
@@ -217,6 +217,5 @@
     </symbol>
   </svg>
   <script src="js/home.js"></script>
-  <!-- <script type="module" src="app.js"></script> -->
 </body>
 </html>

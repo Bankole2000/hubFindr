@@ -63,6 +63,13 @@ mobileSearchButton.addEventListener("click", e => {
     window.location = `profile.html?username=${username|| "null"}&amount=${amount}&field=${field}&direction=${direction}&noOfTopics=${noOfTopics}`;
 })
 
+mobileSearchInput.addEventListener('keyup', e => {
+  if(e.key == "Enter"){
+    transitionElement.classList.add('is-active');
+    window.location = `profile.html?username=${mobileSearchInput.value || "null"}&amount=${amount}&field=${field}&direction=${direction}&noOfTopics=${noOfTopics}`;
+  }
+})
+
 navSearchInput.addEventListener('keyup', e => { 
   if(e.key == "Enter"){
     transitionElement.classList.add('is-active');

@@ -52,7 +52,7 @@ settingsNoOfTopicsInput.addEventListener('input', e => {
   noOfTopics = Number(e.target.value) > 0 && Number(e.target.value) <= 9 ?  Number(e.target.value): 9;
 })
 
-// Submit Nav Input on enter key
+// Submit Inputs on enter key
 navSearchInput.addEventListener('keyup', e => {
   if(e.key == "Enter"){
     transitionElement.classList.add('is-active');
@@ -60,6 +60,13 @@ navSearchInput.addEventListener('keyup', e => {
   }
   if(e.key == "Escape"){
     e.target.blur()
+  }
+})
+
+mobileSearchInput.addEventListener('keyup', e => {
+  if(e.key == "Enter"){
+    transitionElement.classList.add('is-active');
+    window.location = `profile.html?username=${mobileSearchInput.value || "null"}&amount=${amount}&field=${field}&direction=${direction}&noOfTopics=${noOfTopics}`;
   }
 })
 
