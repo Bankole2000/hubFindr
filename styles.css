@@ -17,6 +17,7 @@
   --icon-grey: #9ea6ad;
   --border-grey: #eceef0;
   --btn-hover: #f3f4f6;
+  --nav-input-grey: #404851;
 }
 
 * {
@@ -538,6 +539,10 @@ input {
   background-color: transparent;
 }
 
+input#nav-search-input {
+  border: 1px solid var(--nav-input-grey);
+}
+
 .notification-badge{
   width: 13px; height: 13px; position: absolute; background-color: var(--theme-blue); border-radius: 50%; top: -6px; left: 10px; border: 3px solid var(--theme-grey);
 }
@@ -556,15 +561,15 @@ input:focus {
 
 .input::-webkit-input-placeholder {
   font-weight: 200 !important;
-  color:var(--text-white);
+  color:var(--icon-grey);
 }
 .input::-moz-placeholder {
   font-weight: 200 !important;
-  color:var(--text-white);
+  color:var(--icon-grey);
 }
 .input::-ms-input-placeholder {
   font-weight: 200 !important;
-  color:var(--text-white);
+  color:var(--icon-grey);
 }
 
 p {
