@@ -4,6 +4,7 @@
 :root {
   --theme-grey: #24292e;
   --theme-blue: #0366d6;
+  --tag-hover-blue: #dbedff;
   --theme-green: #305d78;
   --theme-focus-blue: #b2d1f3;
   --tag-bg-blue: #f1f8ff;
@@ -693,10 +694,11 @@ a {
   margin: 4px 1.5px 4px 0px;
   background-color: var(--tag-bg-blue);
   font-weight: 500;
+  transition: all 0.2s ease;
 }
 
 .tag-topic:hover {
-  background-color: var(--theme-focus-blue);
+  background-color: var(--tag-hover-blue);
   cursor: pointer;
 }
 

@@ -180,7 +180,7 @@ export default class UI {
     if(nodes.length){
       this.repoPill.innerHTML = nodes.length;
       this.repos.innerHTML += `<div class="main-item">
-        <p><strong>${nodes.length}</strong> result${nodes.length > 1 ? 's' : ''} of <strong>public repositories</strong> sorted by <strong>${fieldsObject[field]}</strong></p>
+        <p><span style="font-weight: 500;">${nodes.length}</span> result${nodes.length > 1 ? 's' : ''} of <span style="font-weight: 500;">public repositories</span> sorted by <span style="font-weight: 500;">${fieldsObject[field]}</span></p>
     </div>`
     
     nodes.forEach(repo => {
