@@ -178,8 +178,13 @@ button.home-search:focus{
   color: var(--theme-blue);
 }
 
-button.home-search:focus svg{
+button.home-search:focus svg, button.home-search:hover svg{
   fill: var(--theme-blue)
+}
+
+button.home-search:hover {
+  cursor: pointer;
+  color: var(--theme-blue);
 }
 
 section.hero-404 {
