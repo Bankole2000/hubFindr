@@ -15,8 +15,10 @@ export default class UI {
 
         <img src="${user.avatarUrl}" alt="${user.login}" style="border-radius: 50%;" width="100%"/>
       </div>
-      <div style="flex: 10">
+      <div style="flex: 10;">
+      
         <p style="font-size: 26px; line-height: 32px; font-weight: 600; display: ${user.name ? 'block' : 'none'}">${user.name}</p>
+      
         <p style="font-size: 20px; line-height: 24px; font-weight: 300;">${user.login}</p>
       </div>
     </div>

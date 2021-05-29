@@ -422,6 +422,7 @@ section.profile {
 }
 
 .notification-container {
+  display: flex;
   position: relative;
   margin-right: 16px;
   cursor: pointer;
@@ -454,8 +455,8 @@ section.profile {
 }
 
 .small-avatar-container {
-  width: 25px; 
-  height: 25px
+  width: 20px; 
+  height: 20px
 }
 
 section.repos {
@@ -545,7 +546,29 @@ input#nav-search-input {
 }
 
 .notification-badge{
-  width: 13px; height: 13px; position: absolute; background-color: var(--theme-blue); border-radius: 50%; top: -6px; left: 10px; border: 3px solid var(--theme-grey);
+  width: 14px; 
+  height: 14px; 
+  position: absolute; 
+  background: linear-gradient(to top, var(--theme-blue), #4b9cfa) ; 
+  border-radius: 50%; 
+  top: -8px; 
+  left: 6px; 
+  border: 2px solid var(--theme-grey);
+}
+
+.dropdown-caret {
+  display: inline-block;
+  width: 0;
+  height: 0;
+  vertical-align: middle;
+  margin-left: 4px;
+  margin-right: 16px;
+  content: "";
+  border-top-style: solid;
+  border-top-width: 4px;
+  border-right: 4px solid transparent;
+  border-bottom: 0 solid transparent;
+  border-left: 4px solid transparent;
 }
 
 header input:focus{
@@ -747,12 +770,6 @@ a {
   cursor: pointer; 
   border: 2px solid var(--theme-grey); 
   color: var(--theme-grey);
-}
-
-.caret-down {
-  margin-right: 16px; 
-  font-size: small;
-  cursor: pointer;
 }
 
 #nav-search-input {
