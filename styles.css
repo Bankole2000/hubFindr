@@ -241,7 +241,7 @@ main {
 }
 
 main .topbar {
-  height: 56px;
+  height: 48px;
   margin-top: 24px;
   position: sticky;
   position: -webkit-sticky;
@@ -254,6 +254,7 @@ main .topbar {
 
 .container  {
   margin: auto;
+  padding: 0px 16px;
   /* width: 85vw; */
   max-width: 1280px;
 }
@@ -279,7 +280,7 @@ main .topbar {
 
 .top-bar-tabs {
   flex: 9;
-  padding: 8px 16px 0px 16px;
+  padding: 0px 16px 0px 16px;
   display: flex;
   align-items: flex-end;
 }
@@ -319,7 +320,7 @@ main .topbar {
 
 section.profile {
   flex: 3;
-  width: 30%;
+  width: 25%;
   padding: 0 16px;
   margin-top: -30px;
   display: flex;
@@ -340,17 +341,17 @@ section.profile {
 }
 
 .profile-name {
-  font-size: 30px;
+  font-size: 26px;
   line-height: 32px;
   padding-top: 16px;
   font-weight: 500;
 }
 
 .profile-username {
-  font-size: 26px;
-  line-height: 32px;
+  font-size: 20px;
+  line-height: 24px;
   font-weight: 200;
-  padding-bottom: 16px;
+  padding-bottom: 0px;
 }
 
 .profile-short-bio {
@@ -465,7 +466,7 @@ section.profile {
 }
 
 section.repos {
-  flex: 9;
+  width: 75%;
   padding: 0 16px;
 }
 
@@ -1000,6 +1001,7 @@ section.search-404 div p a:hover {
 @media screen and (max-width: 880px){
   .container {
     margin: 0;
+    padding: 0;
     width: 100%;
   }
 

@@ -98,9 +98,9 @@ export default class UI {
   <div class="profile-bio lg-only" >
     <h1 class="profile-name" id="profile-name">${user.name ? user.name : ''}</h1>
     <h2 class="profile-username">${user.login}</h2>
+    <a href="https://github.com/${user.login}?tab=repositories" target="_blank" rel="noreferrer"><button class="btn btn-small btn-block" style="border: 1px solid var(--tab-underline-hover);"><p style="font-size: 15px; line-height: 30px">Follow</p></button></a>
     <p class="profile-short-bio">${user.bio ? user.bio : ''}</p>
-    <a href="https://github.com/${user.login}?tab=repositories" target="_blank" rel="noreferrer"><button class="btn btn-small btn-block"><p style="font-size: 15px; line-height: 30px">Follow</p></button></a>
-    <div style="margin-bottom: 16px; display: flex; align-items: center; justify-content: flex-start; font-size: 13px; flex-wrap: wrap;">
+    <div style="margin-bottom: 16px; margin-top: 16px; line-height: 20px; display: flex; align-items: center; justify-content: flex-start; font-size: 13px; flex-wrap: wrap;">
       <span style="display: flex; align-items: center;">
         <a class="following" href="https://github.com/${user.login}?tab=followers" target="_blank" rel="noreferrer" style="display: flex; align-items: center;">
           <svg class="profile-icon" viewBox="0 0 16 16" height="16" width="16">
