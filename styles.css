@@ -280,7 +280,7 @@ main .topbar {
 
 .top-bar-tabs {
   flex: 9;
-  padding: 0px 16px 0px 16px;
+  padding: 0px 16px 0px 0px;
   display: flex;
   align-items: flex-end;
 }
@@ -986,10 +986,7 @@ section.search-404 div p a:hover {
 
 /* Media Queries */
 @media screen and (max-width: 970px) {
-  .top-bar-tabs {
-    align-items: flex-end;
-    padding-top: 0;
-  }
+
   .top-bar-tabs .tab-item{
     padding: 16px 10px;
   }
