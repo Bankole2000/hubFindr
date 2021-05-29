@@ -10,7 +10,7 @@ A Github user search web app. My submission for the [@buycoinsafrica](https://bu
 
 _<p align="center">"Never give up on something that you can't go a day without thinking about"</p>_ 
 
-<p style="text-align: center;"><small >- Winston Churchill</small></p>
+<p align="center" style="text-align: center;"><small >- Winston Churchill</small></p>
 
 <div align="center" style="text-align:center; margin:auto;">
 <a href="https://bankole2000.github.io/hubFindr/index.html"><img align="center" src="images/hubFindr.png.webp" width="350"/></a>
@@ -47,7 +47,7 @@ An example of what the [final result should look like](https://www.google.com/ur
 - [x] Host your site somewhere (Netlify or Github pages)
 
 ## Project Structure 
-```js
+```scss
 /HubFindr
   |--404.html // For users not found
   |--app.js   // Main profile page logic
@@ -57,12 +57,15 @@ An example of what the [final result should look like](https://www.google.com/ur
   |--styles.css // holds majority styles
   |--/css
   |   |--spinner.css // loader
+  |   |--/fonts   // Imported Fonts
+  |      |--Segoe UI Bold.woff
+  |      |--Segoe UI.woff
   |--/js 
-      |--gql.js  // Holds query and Enum map objects
-      |--home.js  // Home & 404 page logic
-      |--settings.js // barely used this 
-      |--UI.js // Class for rendering UI
-      |--utils.js // Helper functions
+  |   |--gql.js  // Holds query and Enum map objects
+  |   |--home.js  // Home & 404 page logic
+  |   |--settings.js // barely used this 
+  |   |--UI.js // Class for rendering UI
+  |   |--utils.js // Helper functions
   |--/.vscode
       |--settings.json // some personal ide settings
 ```
@@ -122,7 +125,7 @@ Notable (but deliberate) ommissions with reasons:
   2) Allowing empty search inputs eliminated the need for hinting, error/success messages, alerts etc - making a more seamless experience imho.
   3) I wanted to make the 404 page easier to reach. And 
   4) (Most importantly) this is the behaviour of the actual github website. All search fields can be submitted blank/empty (try it).
-* **Fonts**: The Gihub website uses the Segoe UI font. This is not the font I used, due to my general preference for google fonts, and is probably the most significant difference between the **HubFindr** profile page and the actual github website. 
+* **Fonts**: The Gihub website uses the Segoe UI font. This was not the font I originally used, due to my general preference for google fonts, and is probably the most significant difference between the **HubFindr** profile page and the actual github website. ***Update***: Decided to change it to segoe just to be more similar 
 * **Dark Mode**: I could have implemented this fairly easily (and I imagine some other challenge entries probably would/did), but I decided against it so as not to come off as being overly extravagant/pedantic.
 
 ## Known Bugs / Issues
