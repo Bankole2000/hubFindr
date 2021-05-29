@@ -64,7 +64,7 @@ export const createQueryString = (username, amount, field, direction, topics) =>
 }
 
 export const fieldsEnum = {
-  CREATED_AT : 'created at', 
+  CREATED_AT : 'last created', 
   UPDATED_AT : 'last updated',
   PUSHED_AT: 'last pushed to',
   NAME: 'name',
