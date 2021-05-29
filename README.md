@@ -134,9 +134,9 @@ Notable (but deliberate) ommissions with reasons:
 
 ## Some Notes
 - **Early Submission** : I could have submitted this much earlier (completed the basic requirements roughly 3 days after I became aware of the challenge, *24th May*, became aware on the *21st*), but I thought to leverage the extra time to implement the extra features and take notes.
-- **Missing profile data**: I tried adding the `Achievements` section to the user profiles, but couldn't (for the life of me) find the field with the relevant data on the api. This step also prevented me from adding the rest of the profile data (organizations etc), as well as the `Block or Report` link so as not to distort the 1:1 replication.
+- **Missing profile data**: I tried adding the `Achievements` section to the user profiles, but couldn't (for the life of me) find the field with the relevant data on the api. This step also prevented me from adding the rest of the profile data (organizations etc), as well as the `Block or Report` link so as not to distort the 1:1 replication. ***Update***: Decided to try adding it anyway; apparently anyone with at least 1 repo is considered an arctic vault contributor and thus is eligibile for the badge. Hence I went ahead to add the achievement and organization sections
 - **API Security**: To handle the `token` security issue, I used a personal 3rd party api (one of my own creation) so the **HubFindr** site could run on github pages. Ideally, this would be handled with *environmental variables*, an *OAuth server*, or some other kind of client authentication mechanism. I felt uneasy about this, but I believe doing so is/was well within the specified requirements.
-- Room for improvements: The CSS is a bit messy. Too many inline styles especially in template strings. Navbar input and mobile Footer styling could be better (i.e. more similar to Github's). Navbar input animation is jittery sometimes.
+- Room for improvements: The CSS is a bit messy. Too many inline styles especially in template strings. Navbar input and mobile Footer styling could be better (i.e. more similar to Github's). Navbar input animation is jittery sometimes. Tab items (overview, repositories, projects, packages) could be better on mobile.
 
 ## Contribution
 This is a solo project. And will be shared publicly **only** after the submission deadline (31st May 2021).

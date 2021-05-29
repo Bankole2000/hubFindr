@@ -23,7 +23,7 @@ export default class UI {
       </div>
     </div>
   </div>
-  <div style="padding: 0 16px; border-bottom: 1px solid var(--border-grey)">
+  <div style="padding: 0 16px;">
     <div style="display: ${user.status ? 'flex': 'none'}; padding: 4px 8px; border: 1px solid var(--border-grey); border-radius: 10px;">
       <p><span>${user.status?.emojiHTML ? user.status.emojiHTML : '💭'}</span><span>&nbsp; ${user.status?.message ? user.status.message : ''}</span></p>
     </div>
@@ -84,8 +84,35 @@ export default class UI {
     <a href="https://github.com/${user.login}?tab=repositories" target="_blank" rel="noreferrer" style="width: 100%; border: 1px solid var(--border-grey); padding: 5px; display: block; text-align: center; margin: 10px 0px; border-radius: 5px; color: var(--text-black)">Follow</a>
 
   </div>
+  <div class="achievements" style="padding-top: 16px; margin: 16px; border-top: 1px solid var(--border-grey); display: ${user.repositories.nodes.length ? 'block':'none'}">
+    <p style="margin-bottom: 8px; font-size: 16px; font-weight: 500; color: var(--text-black)">Achievements</p>
+    <img
+      alt="Arctic Code Vault Contributor"
+      width="64px"
+      src="https://github.githubassets.com/images/modules/profile/badge--acv-64.png"
+    />
+  </div>
     `
-    
+    const renderOrgsHTML = (orgs) => {
+      let html = ``
+      if(orgs.length){
+        orgs.forEach(org => {
+          html +=`
+          <a title="${org.name}" href="https://github.com/${org.login}" target="_blank" rel="noreferrer" style="margin-right: 5px;">
+          <img
+          style="border-radius: 6px"
+          alt="${org.name}"
+          width="32px"
+          height="32px"
+          src="${org.avatarUrl}"
+        />
+        </a>
+          `
+        })
+      }
+      return html
+    }
+
     this.profile.innerHTML = `
     <div class="profile-image lg-only">
     <div class="user-image">
@@ -156,8 +183,24 @@ export default class UI {
         <use xlink:href="#twitter-icon" />
       </svg>
     ${user.twitterUsername}</a></p>
-    
+    <div class="achievements" style="padding-top: 16px; margin-top: 16px; border-top: 1px solid var(--border-grey); display: ${user.repositories.nodes.length ? 'block':'none'}">
+      <p style="margin-bottom: 8px; font-size: 16px; font-weight: 500; color: var(--text-black)">Achievements</p>
+      <img
+        alt="Arctic Code Vault Contributor"
+        width="64px"
+        src="https://github.githubassets.com/images/modules/profile/badge--acv-64.png"
+      />
+    </div>
+    <div class="organizations" style="padding-top: 16px; margin-top: 16px; border-top: 1px solid var(--border-grey); display: ${user.organizations.nodes.length ? 'block':'none'}">
+      <p style="margin-bottom: 8px; font-size: 16px; font-weight: 500; color: var(--text-black)">Organizations</p>
+      <div style="display: flex">
+      ${renderOrgsHTML(user.organizations.nodes)}
+      </div>
+      
+    </div>
+    <p class="block-link">Block or Report</p>
   </div>
+  
     `
    document.querySelector('#nav-avatar').setAttribute('src', user.avatarUrl)
    const topBarAvatar = this.topBarProfile.querySelector('#top-bar-profile-avatar');

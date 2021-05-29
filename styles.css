@@ -480,6 +480,17 @@ section.profile {
   height: 20px
 }
 
+.block-link {
+  font-size: 14px;
+  margin: 8px 0px;
+  color: var(--text-grey);
+}
+
+.block-link:hover {
+  cursor: pointer;
+  color: var(--theme-blue);
+}
+
 section.repos {
   width: 75%;
   padding: 0 16px;
@@ -543,6 +554,7 @@ svg.profile-icon {
 
 a.following {
   color: var(--text-black);
+  font-size: 14px;
 }
 
 a.following:hover {

@@ -25,6 +25,13 @@ export const createQueryString = (username, amount, field, direction, topics) =>
           emoji
           message
         }
+        organizations(first: 5){
+          nodes{
+            avatarUrl
+            name
+            login
+          }
+        }
         repositories(first: $amount, orderBy: {field: $field, direction:$direction}){
           nodes{
             name
