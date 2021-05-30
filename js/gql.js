@@ -32,6 +32,11 @@ export const createQueryString = (username, amount, field, direction, topics) =>
             login
           }
         }
+        sponsorshipsAsSponsor(first: 5){
+          nodes{
+            isOneTimePayment
+          }
+        }
         repositories(first: $amount, orderBy: {field: $field, direction:$direction}){
           nodes{
             name

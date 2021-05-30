@@ -13,7 +13,7 @@ export default class UI {
     <div style="display: flex; align-items: center;  color: var(--theme-grey);">
       <div style="flex: 2; margin-right: 16px; display: flex; align-items: center;">
 
-        <img src="${user.avatarUrl}" alt="${user.login}" style="border-radius: 50%;" width="100%"/>
+        <img src="${user.avatarUrl}" alt="${user.login}" style="border-radius: 50%; background-color: white;" width="100%"/>
       </div>
       <div style="flex: 10;">
       
@@ -77,7 +77,7 @@ export default class UI {
           <svg class="profile-icon" viewBox="0 0 16 16" height="16" width="16">
             <use xlink:href="#star-empty-icon" />
           </svg>
-          <span style="font-weight: 500;">${user.starredRepositories.totalCount}</span>
+          <span style="font-weight: 500;">${user.starredRepositories.totalCount > 1000 ? (user.starredRepositories.totalCount / 1000).toFixed(1) + 'k': user.starredRepositories.totalCount}</span>
         </a>
       </span>
     </div>
@@ -86,11 +86,16 @@ export default class UI {
   </div>
   <div class="achievements" style="padding-top: 16px; margin: 16px; border-top: 1px solid var(--border-grey); display: ${user.repositories.nodes.length ? 'block':'none'}">
     <p style="margin-bottom: 8px; font-size: 16px; font-weight: 500; color: var(--text-black)">Achievements</p>
+    <a href="https://archiveprogram.github.com" target="_blank" rel="noreferrer">
     <img
       alt="Arctic Code Vault Contributor"
       width="64px"
       src="https://github.githubassets.com/images/modules/profile/badge--acv-64.png"
     />
+    </a>
+    <a href="https://github.com/${user.login}?tab=sponsoring" target="_blank" rel="noreferrer" style="display: ${user.sponsorshipsAsSponsor.nodes.length ? 'inline-block': 'none'};">
+    <img width="64px" src="https://github.githubassets.com/images/modules/site/sponsors/badge--sponsors-64.png"/>
+    </a>
   </div>
     `
     const renderOrgsHTML = (orgs) => {
@@ -116,7 +121,7 @@ export default class UI {
     this.profile.innerHTML = `
     <div class="profile-image lg-only">
     <div class="user-image">
-      <img src="${user.avatarUrl}" alt="${user.login}" class="avatar">
+      <img src="${user.avatarUrl}" alt="${user.login}" style="background-color: white;" class="avatar">
       <div class="user-status" style="display: ${user.status? 'inline-block': 'none'}">
         <div class="user-status-details"><span class="status-emoji">${user.status?.emojiHTML ? user.status.emojiHTML : '💭'}</span><span class="status-text">${user.status?.message ? user.status.message : ''}</span></div>
       </div>
@@ -148,7 +153,7 @@ export default class UI {
           <svg class="profile-icon" viewBox="0 0 16 16" height="16" width="16">
             <use xlink:href="#star-empty-icon" />
           </svg>
-          <span style="font-weight: 500;">${user.starredRepositories.totalCount}</span>
+          <span style="font-weight: 500;">${user.starredRepositories.totalCount > 1000 ? (user.starredRepositories.totalCount/1000).toFixed(1) + 'k' : user.starredRepositories.totalCount}</span>
         </a>
       </span>
     </div>
@@ -185,11 +190,16 @@ export default class UI {
     ${user.twitterUsername}</a></p>
     <div class="achievements" style="padding-top: 16px; margin-top: 16px; border-top: 1px solid var(--border-grey); display: ${user.repositories.nodes.length ? 'block':'none'}">
       <p style="margin-bottom: 8px; font-size: 16px; font-weight: 500; color: var(--text-black)">Achievements</p>
-      <img
-        alt="Arctic Code Vault Contributor"
-        width="64px"
-        src="https://github.githubassets.com/images/modules/profile/badge--acv-64.png"
-      />
+      <a href="https://archiveprogram.github.com" target="_blank" rel="noreferrer">
+        <img
+          alt="Arctic Code Vault Contributor"
+          width="64px"
+          src="https://github.githubassets.com/images/modules/profile/badge--acv-64.png"
+        />
+      </a>
+      <a href="https://github.com/${user.login}?tab=sponsoring" target="_blank" rel="noreferrer" style="display: ${user.sponsorshipsAsSponsor.nodes.length ? 'inline-block': 'none'};">
+        <img width="64px" src="https://github.githubassets.com/images/modules/site/sponsors/badge--sponsors-64.png"/>
+      </a>
     </div>
     <div class="organizations" style="padding-top: 16px; margin-top: 16px; border-top: 1px solid var(--border-grey); display: ${user.organizations.nodes.length ? 'block':'none'}">
       <p style="margin-bottom: 8px; font-size: 16px; font-weight: 500; color: var(--text-black)">Organizations</p>
