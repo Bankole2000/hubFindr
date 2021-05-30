@@ -671,6 +671,10 @@ strong {
   line-height: 30px;
 }
 
+.repo-title a:hover {
+  text-decoration: underline;
+}
+
 .repo-desc{
   font-size: 14px;
   line-height: 21px;
